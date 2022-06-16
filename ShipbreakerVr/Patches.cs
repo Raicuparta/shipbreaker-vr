@@ -12,6 +12,11 @@ public static class Patches
 	private static void DisableShadows(HDAdditionalLightData __instance)
 	{
 		Debug.Log($"#### FOund light {__instance.name}");
-		__instance.GetComponent<Light>().shadows = LightShadows.None;
+		var light = __instance.GetComponent<Light>();
+		light.shadows = LightShadows.None;
+		__instance.EnableShadows(false);
+		__instance.affectsVolumetric = false;
+		__instance.enabled = false;
+		light.enabled = false;
 	}
 }
