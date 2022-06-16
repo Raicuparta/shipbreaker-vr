@@ -23,7 +23,7 @@ public class XrLoader: MonoBehaviour
 		if (XRGeneralSettings.Instance != null && XRGeneralSettings.Instance.Manager != null
 		                                       && XRGeneralSettings.Instance.Manager.activeLoader != null)
 		{
-			XRGeneralSettings.Instance.Manager.StartSubsystems();
+			// XRGeneralSettings.Instance.Manager.StartSubsystems();
 		}
 		else
 			throw new Exception("Cannot initialize VRSubsystem");
