@@ -29,7 +29,7 @@ namespace ShipbreakerVr
 				XRGeneralSettings.Instance.Manager.activeLoader.Start();
 				IsVrEnabled = true;
 			}
-			if (Input.GetKeyDown(KeyCode.F4))
+			if (Input.GetKeyDown(KeyCode.F5))
 			{
 				XRGeneralSettings.Instance.Manager.activeLoader.Stop();
 				XRGeneralSettings.Instance.Manager.activeLoader.Deinitialize();
