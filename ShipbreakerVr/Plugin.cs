@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Reflection;
+﻿using System.Reflection;
 using BepInEx;
-using BepInEx.Configuration;
-using Doozy.Engine.UI.Input;
 using HarmonyLib;
-using InControl;
 using UnityEngine;
 using UnityEngine.XR;
 using UnityEngine.XR.Management;
+using UnityEngine.XR.OpenXR;
 
 namespace ShipbreakerVr
 {
@@ -31,11 +27,14 @@ namespace ShipbreakerVr
 			if (Input.GetKeyDown(KeyCode.F3))
 			{
 				XRGeneralSettings.Instance.Manager.StartSubsystems();
+				XRGeneralSettings.Instance.Manager.activeLoader.Initialize();
+				XRGeneralSettings.Instance.Manager.activeLoader.Start();
 				IsVrEnabled = true;
 			}
 			if (Input.GetKeyDown(KeyCode.F4))
 			{
-				XRGeneralSettings.Instance.Manager.StopSubsystems();
+				XRGeneralSettings.Instance.Manager.activeLoader.Stop();
+				XRGeneralSettings.Instance.Manager.activeLoader.Deinitialize();
 				IsVrEnabled = false;
 			}
 		}
