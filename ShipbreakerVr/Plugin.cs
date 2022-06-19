@@ -1,8 +1,6 @@
 ﻿using System.Reflection;
 using BepInEx;
 using HarmonyLib;
-using UnityEngine;
-using UnityEngine.XR.Management;
 
 namespace ShipbreakerVr
 {

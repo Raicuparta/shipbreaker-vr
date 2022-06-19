@@ -377,6 +377,9 @@
         <HintPath>$(GameDir)\Shipbreaker_Data\Managed\Unity.Formats.Fbx.Runtime.dll</HintPath>
         <Private>False</Private>
       </Reference>
+      <Reference Include="Unity.InputSystem, Version=1.0.2.0, Culture=neutral, PublicKeyToken=null">
+        <HintPath>..\ShipbreakerVrUnity\Build\ShipbreakerVrUnity_Data\Managed\Unity.InputSystem.dll</HintPath>
+      </Reference>
       <Reference Include="Unity.InternalAPIEngineBridge.012">
         <HintPath>$(GameDir)\Shipbreaker_Data\Managed\Unity.InternalAPIEngineBridge.012.dll</HintPath>
         <Private>False</Private>
@@ -618,6 +621,7 @@
       </Reference>
       <Reference Include="UnityEngine.InputLegacyModule">
         <HintPath>$(GameDir)\Shipbreaker_Data\Managed\UnityEngine.InputLegacyModule.dll</HintPath>
+        <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.InputModule">
         <HintPath>$(GameDir)\Shipbreaker_Data\Managed\UnityEngine.InputModule.dll</HintPath>
