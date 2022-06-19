@@ -2,9 +2,7 @@
 using BepInEx;
 using HarmonyLib;
 using UnityEngine;
-using UnityEngine.XR;
 using UnityEngine.XR.Management;
-using UnityEngine.XR.OpenXR;
 
 namespace ShipbreakerVr
 {
