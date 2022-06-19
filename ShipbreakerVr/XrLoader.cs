@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using Unity.XR.OpenVR;
 using UnityEngine;
 using UnityEngine.XR;
 using UnityEngine.XR.Management;
+using UnityEngine.XR.OpenXR;
 using Valve.VR;
 
 namespace ShipbreakerVr;
@@ -66,12 +66,16 @@ public class XrLoader: MonoBehaviour
 		xrManagerSettings.InitializeLoaderSync();
 		if (xrManagerSettings.activeLoader == null) throw new Exception("Cannot initialize OpenVR Loader");
 
-		var openVrSettings = OpenVRSettings.GetSettings(false);
-		openVrSettings.EditorAppKey = "steam.app.753640";
-		openVrSettings.InitializationType = OpenVRSettings.InitializationTypes.Scene;
-		openVrSettings.StereoRenderingMode = OpenVRSettings.StereoRenderingModes.SinglePassInstanced;
-		if (openVrSettings == null) throw new Exception("OpenVRSettings instance is null");
+		var openXrSettings = ScriptableObject.FindObjectOfType<OpenXRSettings>(true);
+		
+		Debug.Log($"### Found OpenXrSettinghs? {openXrSettings != null}");
 
-		openVrSettings.SetMirrorViewMode(OpenVRSettings.MirrorViewModes.Right);
+		// var openVrSettings = OpenVRSettings.GetSettings(false);
+		// openVrSettings.EditorAppKey = "steam.app.753640";
+		// openVrSettings.InitializationType = OpenVRSettings.InitializationTypes.Scene;
+		// openVrSettings.StereoRenderingMode = OpenVRSettings.StereoRenderingModes.SinglePassInstanced;
+		// if (openVrSettings == null) throw new Exception("OpenVRSettings instance is null");
+		//
+		// openVrSettings.SetMirrorViewMode(OpenVRSettings.MirrorViewModes.Right);
 	}
 }

@@ -511,8 +511,29 @@
       <Reference Include="Unity.XR.Management">
         <HintPath>..\ShipBreakerVrUnity\Build\ShipBreakerVrUnity_Data\Managed\Unity.XR.Management.dll</HintPath>
       </Reference>
-      <Reference Include="Unity.XR.OpenVR">
-        <HintPath>..\ShipBreakerVrUnity\Build\ShipBreakerVrUnity_Data\Managed\Unity.XR.OpenVR.dll</HintPath>
+      <Reference Include="Unity.XR.Management, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+        <HintPath>..\ShipbreakerVrUnity\Build\ShipbreakerVrUnity_Data\Managed\Unity.XR.Management.dll</HintPath>
+      </Reference>
+      <Reference Include="Unity.XR.OpenXR, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+        <HintPath>..\ShipbreakerVrUnity\Build\ShipbreakerVrUnity_Data\Managed\Unity.XR.OpenXR.dll</HintPath>
+      </Reference>
+      <Reference Include="Unity.XR.OpenXR.Features.ConformanceAutomation, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+        <HintPath>..\ShipbreakerVrUnity\Build\ShipbreakerVrUnity_Data\Managed\Unity.XR.OpenXR.Features.ConformanceAutomation.dll</HintPath>
+      </Reference>
+      <Reference Include="Unity.XR.OpenXR.Features.MockDriver, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+        <HintPath>..\ShipbreakerVrUnity\Build\ShipbreakerVrUnity_Data\Managed\Unity.XR.OpenXR.Features.MockDriver.dll</HintPath>
+      </Reference>
+      <Reference Include="Unity.XR.OpenXR.Features.MockRuntime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+        <HintPath>..\ShipbreakerVrUnity\Build\ShipbreakerVrUnity_Data\Managed\Unity.XR.OpenXR.Features.MockRuntime.dll</HintPath>
+      </Reference>
+      <Reference Include="Unity.XR.OpenXR.Features.OculusQuestSupport, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+        <HintPath>..\ShipbreakerVrUnity\Build\ShipbreakerVrUnity_Data\Managed\Unity.XR.OpenXR.Features.OculusQuestSupport.dll</HintPath>
+      </Reference>
+      <Reference Include="Unity.XR.OpenXR.Features.RuntimeDebugger, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+        <HintPath>..\ShipbreakerVrUnity\Build\ShipbreakerVrUnity_Data\Managed\Unity.XR.OpenXR.Features.RuntimeDebugger.dll</HintPath>
+      </Reference>
+      <Reference Include="Unity.XR.OpenXR.TestHelpers, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+        <HintPath>..\ShipbreakerVrUnity\Build\ShipbreakerVrUnity_Data\Managed\Unity.XR.OpenXR.TestHelpers.dll</HintPath>
       </Reference>
       <Reference Include="UnityEngine">
         <HintPath>$(GameDir)\Shipbreaker_Data\Managed\UnityEngine.dll</HintPath>

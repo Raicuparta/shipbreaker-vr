@@ -19,6 +19,7 @@ public class VrCamera: MonoBehaviour
 		instance.vrCamera.farClipPlane = mainCamera.farClipPlane;
 		instance.vrCamera.nearClipPlane = mainCamera.nearClipPlane;
 		instance.vrCamera.cullingMask = mainCamera.cullingMask;
+		instance.vrCamera.transform.localPosition = Vector3.forward * 0.2f;
 		
 		var poseDriver = instance.gameObject.AddComponent<TrackedPoseDriver>();
 		poseDriver.trackingType = TrackedPoseDriver.TrackingType.RotationOnly;
