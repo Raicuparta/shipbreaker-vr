@@ -27,7 +27,7 @@ public class VrCamera: MonoBehaviour
 
 	private void Update()
 	{
-		mainCamera.enabled = !Plugin.IsVrEnabled;
-		vrCamera.enabled = Plugin.IsVrEnabled;
+		mainCamera.enabled = !ModXrManager.IsVrEnabled;
+		vrCamera.enabled = ModXrManager.IsVrEnabled;
 	}
 }

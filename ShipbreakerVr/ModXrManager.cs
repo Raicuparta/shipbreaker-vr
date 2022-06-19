@@ -5,8 +5,12 @@ using UnityEngine.XR.OpenXR;
 
 namespace ShipbreakerVr;
 
-public class XrLoader: MonoBehaviour
+public class ModXrManager: MonoBehaviour
 {
+	public static bool IsVrEnabled;
+	private static OpenXRLoaderBase openXrLoader;
+	private static bool isInitialized => openXrLoader != null && openXrLoader.GetValue<bool>("isInitialized");
+		
 	private void Awake()
 	{
 		var xrManagerBundle = VrAssetManager.LoadBundle("xrmanager");
@@ -23,8 +27,29 @@ public class XrLoader: MonoBehaviour
 		xrManagerSettings.InitializeLoaderSync();
 		if (xrManagerSettings.activeLoader == null) throw new Exception("Cannot initialize OpenVR Loader");
 
+		openXrLoader = xrManagerSettings.ActiveLoaderAs<OpenXRLoaderBase>();
+
 		// Reference OpenXRSettings just to make this work.
 		// TODO figure out how to do this properly.
 		OpenXRSettings unused;
+	}
+
+	private void Update()
+	{
+		if (Input.GetKeyDown(KeyCode.F3))
+		{
+			if (!IsVrEnabled)
+			{
+				XRGeneralSettings.Instance.Manager.StartSubsystems();
+				XRGeneralSettings.Instance.Manager.activeLoader.Initialize();
+				XRGeneralSettings.Instance.Manager.activeLoader.Start();
+			}
+			else
+			{
+				XRGeneralSettings.Instance.Manager.activeLoader.Stop();
+				XRGeneralSettings.Instance.Manager.activeLoader.Deinitialize();
+			}
+			IsVrEnabled = isInitialized;
+		}
 	}
 }
