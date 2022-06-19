@@ -10,7 +10,14 @@
         <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
         <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
         <GameDir>C:\Games\Hardspace- Shipbreaker\Content</GameDir>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
         <OutputPath>$(GameDir)\BepInEx\plugins\ShipbreakerVr</OutputPath>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+        <OutputPath>ReleaseFiles\BepInEx\plugins\ShipbreakerVr</OutputPath>
     </PropertyGroup>
 
     <ItemGroup>
