@@ -4,7 +4,7 @@
         <TargetFramework>net48</TargetFramework>
         <AssemblyName>ShipbreakerVr</AssemblyName>
         <Description>Hardspace: Shipbreaker VR mod</Description>
-        <Version>1.0.0</Version>
+        <Version>0.1.0</Version>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <LangVersion>latest</LangVersion>
         <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
