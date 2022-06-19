@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.XR.Management;
+using UnityEngine.XR.OpenXR;
 
 namespace ShipbreakerVr;
 
@@ -20,7 +21,10 @@ public class XrLoader: MonoBehaviour
 		if (xrManagerSettings == null) throw new Exception("XRManagerSettings instance is null");
 
 		xrManagerSettings.InitializeLoaderSync();
-		if (xrManagerSettings.activeLoader == null) throw new Exception("Cannot initialize OpenXR Loader");
-	}
+		if (xrManagerSettings.activeLoader == null) throw new Exception("Cannot initialize OpenVR Loader");
 
+		// Reference OpenXRSettings just to make this work.
+		// TODO figure out how to do this properly.
+		OpenXRSettings unused;
+	}
 }

@@ -193,9 +193,6 @@
         <HintPath>$(GameDir)\Shipbreaker_Data\Managed\Sirenix.OdinInspector.Attributes.dll</HintPath>
         <Private>False</Private>
       </Reference>
-      <Reference Include="SteamVR">
-        <HintPath>..\ShipBreakerVrUnity\Build\ShipBreakerVrUnity_Data\Managed\SteamVR.dll</HintPath>
-      </Reference>
       <Reference Include="Steamworks.NET.Plugins">
         <HintPath>$(GameDir)\Shipbreaker_Data\Managed\Steamworks.NET.Plugins.dll</HintPath>
         <Private>False</Private>
