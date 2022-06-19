@@ -10,7 +10,7 @@ public class ModXrManager: MonoBehaviour
 	public static bool IsVrEnabled;
 	private static OpenXRLoaderBase openXrLoader;
 	private static bool isInitialized => openXrLoader != null && openXrLoader.GetValue<bool>("isInitialized");
-		
+
 	private void Awake()
 	{
 		var xrManagerBundle = VrAssetManager.LoadBundle("xrmanager");
