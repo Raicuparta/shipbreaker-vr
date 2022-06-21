@@ -1,7 +1,5 @@
 ﻿using System;
-using BBI.Unity.Game;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.XR.Management;
 using UnityEngine.XR.OpenXR;
 
@@ -53,39 +51,12 @@ public class ModXrManager : MonoBehaviour
             }
 
             IsVrEnabled = IsInitialized;
-            SetUpUi(IsVrEnabled);
         }
     }
 
-    private void SetUpUi(bool isVr)
+    private void Disable(MonoBehaviour component)
     {
-        var hudSystem = FindObjectOfType<GlassModeController>();
-        if (!hudSystem) Debug.LogError("Failed to find HUD System");
-
-        var hudCanvasHelmet = hudSystem.transform.Find("HUDContainer/HUD Canvas - Helmet").GetComponent<Canvas>();
-        hudCanvasHelmet.transform.SetParent(Camera.main.transform, false);
-        hudCanvasHelmet.transform.localPosition = Vector3.forward * 3;
-        hudCanvasHelmet.transform.localScale = Vector3.one * 0.0025f;
-        hudCanvasHelmet.transform.localRotation = Quaternion.identity;
-
-        hudCanvasHelmet.renderMode = isVr ? RenderMode.WorldSpace : RenderMode.ScreenSpaceCamera;
-
-        if (isVr) MaterialHelper.MakeGraphicChildrenDrawOnTop(hudCanvasHelmet.gameObject);
-
-        hudCanvasHelmet.GetComponent<CanvasScalerImprover>().enabled = !isVr;
-        hudCanvasHelmet.GetComponent<CanvasScaler>().enabled = !isVr;
-
-        var hudCanvasOther = hudSystem.transform.Find("HUDContainer/HUD Canvas - Other").GetComponent<Canvas>();
-        hudCanvasOther.transform.SetParent(Camera.main.transform, false);
-        hudCanvasOther.transform.localPosition = Vector3.forward * 3;
-        hudCanvasOther.transform.localScale = Vector3.one * 0.004f;
-        hudCanvasOther.transform.localRotation = Quaternion.identity;
-
-        hudCanvasOther.renderMode = isVr ? RenderMode.WorldSpace : RenderMode.ScreenSpaceOverlay;
-
-        if (isVr) MaterialHelper.MakeGraphicChildrenDrawOnTop(hudCanvasOther.gameObject);
-
-        hudCanvasOther.GetComponent<CanvasScalerImprover>().enabled = !isVr;
-        hudCanvasOther.GetComponent<CanvasScaler>().enabled = !isVr;
+        if (!component) return;
+        component.enabled = false;
     }
 }
