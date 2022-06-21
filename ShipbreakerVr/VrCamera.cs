@@ -5,14 +5,16 @@ namespace ShipbreakerVr;
 
 public class VrCamera : MonoBehaviour
 {
-    private Camera mainCamera;
     private Camera vrCamera;
+
+    // TODO no public static
+    public static Camera MainCamera { get; private set; }
 
     public static void Create(Camera mainCamera)
     {
         var instance = new GameObject("VrCamera").AddComponent<VrCamera>();
         instance.transform.SetParent(mainCamera.transform, false);
-        instance.mainCamera = mainCamera;
+        MainCamera = mainCamera;
 
         instance.vrCamera = instance.gameObject.AddComponent<Camera>();
         instance.vrCamera.farClipPlane = mainCamera.farClipPlane;
@@ -27,7 +29,7 @@ public class VrCamera : MonoBehaviour
 
     private void Update()
     {
-        mainCamera.enabled = !ModXrManager.IsVrEnabled;
+        MainCamera.enabled = !ModXrManager.IsVrEnabled;
         vrCamera.enabled = ModXrManager.IsVrEnabled;
     }
 }

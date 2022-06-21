@@ -9,6 +9,7 @@ public class ModXrManager : MonoBehaviour
 {
     public static bool IsVrEnabled;
     private static OpenXRLoaderBase openXrLoader;
+    public static Action<bool> OnVrModeChange;
     private static bool IsInitialized => openXrLoader != null && openXrLoader.GetValue<bool>("isInitialized");
 
     private void Awake()
@@ -51,12 +52,8 @@ public class ModXrManager : MonoBehaviour
             }
 
             IsVrEnabled = IsInitialized;
-        }
-    }
 
-    private void Disable(MonoBehaviour component)
-    {
-        if (!component) return;
-        component.enabled = false;
+            OnVrModeChange?.Invoke(IsVrEnabled);
+        }
     }
 }
