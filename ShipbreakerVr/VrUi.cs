@@ -16,13 +16,18 @@ public class VrUi : MonoBehaviour
 
     private void Awake()
     {
-        target = (VrCamera.MainCamera ? VrCamera.MainCamera : Camera.main)?.transform;
         canvas = GetComponent<Canvas>();
         initialPosition = transform.position;
         initialRotation = transform.rotation;
         initialScale = transform.localScale;
         initialRenderMode = canvas.renderMode;
         MaterialHelper.MakeGraphicChildrenDrawOnTop(gameObject);
+    }
+
+    private void Update()
+    {
+        if (ModXrManager.IsVrEnabled && canvas.renderMode != RenderMode.WorldSpace) SetUpCanvas();
+        else if (!ModXrManager.IsVrEnabled && canvas.renderMode == RenderMode.WorldSpace) ResetCanvas();
     }
 
     private void LateUpdate()
@@ -33,26 +38,9 @@ public class VrUi : MonoBehaviour
         transform.rotation = target.rotation;
     }
 
-    private void OnEnable()
-    {
-        ModXrManager.OnVrModeChange += OnVrModeChange;
-    }
-
-    private void OnDisable()
-    {
-        ModXrManager.OnVrModeChange -= OnVrModeChange;
-    }
-
-    private void OnVrModeChange(bool isVrEnabled)
-    {
-        if (isVrEnabled)
-            SetUpCanvas();
-        else
-            ResetCanvas();
-    }
-
     private void SetUpCanvas()
     {
+        target = (VrCamera.MainCamera ? VrCamera.MainCamera : Camera.main)?.transform;
         transform.localScale = Vector3.one * 0.0025f;
         canvas.renderMode = RenderMode.WorldSpace;
         SetBehaviourEnabled(canvas.GetComponent<CanvasScalerImprover>(), false);
