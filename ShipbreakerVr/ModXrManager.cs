@@ -45,16 +45,15 @@ public class ModXrManager : MonoBehaviour
                 XRGeneralSettings.Instance.Manager.StartSubsystems();
                 XRGeneralSettings.Instance.Manager.activeLoader.Initialize();
                 XRGeneralSettings.Instance.Manager.activeLoader.Start();
-                SetUpUi(true);
             }
             else
             {
                 XRGeneralSettings.Instance.Manager.activeLoader.Stop();
                 XRGeneralSettings.Instance.Manager.activeLoader.Deinitialize();
-                SetUpUi(false);
             }
 
             IsVrEnabled = IsInitialized;
+            SetUpUi(IsVrEnabled);
         }
     }
 
@@ -62,15 +61,29 @@ public class ModXrManager : MonoBehaviour
     {
         var hudSystem = FindObjectOfType<GlassModeController>();
         if (!hudSystem) Debug.LogError("Failed to find HUD System");
-        hudSystem.transform.SetParent(Camera.main.transform, false);
-        hudSystem.transform.localPosition = Vector3.forward * 3;
-        hudSystem.transform.localScale = Vector3.one * 0.004f;
 
-        var hudCanvasOther = hudSystem.transform.Find("HUDContainer/HUD Canvas - Other/").GetComponent<Canvas>();
-        hudCanvasOther.renderMode = isVr ? RenderMode.WorldSpace : RenderMode.ScreenSpaceOverlay;
-        hudCanvasOther.transform.localPosition = Vector3.zero;
+        var hudCanvasHelmet = hudSystem.transform.Find("HUDContainer/HUD Canvas - Helmet").GetComponent<Canvas>();
+        hudCanvasHelmet.transform.SetParent(Camera.main.transform, false);
+        hudCanvasHelmet.transform.localPosition = Vector3.forward * 3;
+        hudCanvasHelmet.transform.localScale = Vector3.one * 0.003f;
+        hudCanvasHelmet.transform.localRotation = Quaternion.identity;
+
+        hudCanvasHelmet.renderMode = isVr ? RenderMode.WorldSpace : RenderMode.ScreenSpaceCamera;
+
+        if (isVr) MaterialHelper.MakeGraphicChildrenDrawOnTop(hudCanvasHelmet.gameObject);
+
+        hudCanvasHelmet.GetComponent<CanvasScalerImprover>().enabled = !isVr;
+        hudCanvasHelmet.GetComponent<CanvasScaler>().enabled = !isVr;
+
+        var hudCanvasOther = hudSystem.transform.Find("HUDContainer/HUD Canvas - Other").GetComponent<Canvas>();
+        hudCanvasOther.transform.SetParent(Camera.main.transform, false);
+        hudCanvasOther.transform.localPosition = Vector3.forward * 3;
+        hudCanvasOther.transform.localScale = Vector3.one * 0.004f;
         hudCanvasOther.transform.localRotation = Quaternion.identity;
-        hudCanvasOther.transform.localScale = Vector3.one;
+
+        hudCanvasOther.renderMode = isVr ? RenderMode.WorldSpace : RenderMode.ScreenSpaceOverlay;
+
+        if (isVr) MaterialHelper.MakeGraphicChildrenDrawOnTop(hudCanvasOther.gameObject);
 
         hudCanvasOther.GetComponent<CanvasScalerImprover>().enabled = !isVr;
         hudCanvasOther.GetComponent<CanvasScaler>().enabled = !isVr;

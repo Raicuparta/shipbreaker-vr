@@ -22,27 +22,27 @@
 
     <Target Name="Zip release" AfterTargets="PostBuildEvent" Condition=" '$(Configuration)' == 'Release' ">
         <ItemGroup>
-            <ReleaseFiles Include="ReleaseFiles\**"/>
-            <ReleaseFiles Include="ReleaseFiles\**"/>
+            <ReleaseFiles Include="ReleaseFiles\**" />
+            <ReleaseFiles Include="ReleaseFiles\**" />
         </ItemGroup>
-        <MakeDir Directories="bin\Release"/>
-        <ZipDirectory SourceDirectory="ReleaseFiles" DestinationFile="bin\Release\$(AssemblyName).zip" Overwrite="true"/>
+        <MakeDir Directories="bin\Release" />
+        <ZipDirectory SourceDirectory="ReleaseFiles" DestinationFile="bin\Release\$(AssemblyName).zip" Overwrite="true" />
     </Target>
 
     <ItemGroup>
-        <PackageReference Include="BepInEx.Analyzers" Version="1.0.8" PrivateAssets="all"/>
-        <PackageReference Include="ShipbreakerGameLibs" Version="1.0.21"/>
-        <PackageReference Include="BepInEx.Core" Version="5.4.19"/>
-        <PackageReference Include="BepInEx.PluginInfoProps" Version="1.1.0"/>
+        <PackageReference Include="BepInEx.Analyzers" Version="1.0.8" PrivateAssets="all" />
+        <PackageReference Include="ShipbreakerGameLibs" Version="1.0.21" />
+        <PackageReference Include="BepInEx.Core" Version="5.4.19" />
+        <PackageReference Include="BepInEx.PluginInfoProps" Version="1.1.0" />
     </ItemGroup>
 
     <ItemGroup Condition="'$(TargetFramework.TrimEnd(`0123456789`))' == 'net'">
-        <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.2" PrivateAssets="all"/>
+        <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.2" PrivateAssets="all" />
     </ItemGroup>
 
     <ItemGroup>
-        <None Remove="AssetBundles\xrmanager"/>
-        <None Remove="AssetBundles\xrmanager.manifest"/>
+        <None Remove="AssetBundles\xrmanager" />
+        <None Remove="AssetBundles\xrmanager.manifest" />
     </ItemGroup>
 
     <ItemGroup>
