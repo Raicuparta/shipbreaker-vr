@@ -9,11 +9,35 @@ public class ModXrManager : MonoBehaviour
 {
     public static bool IsVrEnabled;
     private static OpenXRLoaderBase openXrLoader;
-    public static Action<bool> OnVrModeChange;
+    private bool isXrSetUp;
     private static bool IsInitialized => openXrLoader != null && openXrLoader.GetValue<bool>("isInitialized");
 
-    private void Awake()
+    private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.F3))
+        {
+            if (!isXrSetUp) SetUpXr();
+
+            if (!IsVrEnabled)
+            {
+                XRGeneralSettings.Instance.Manager.StartSubsystems();
+                XRGeneralSettings.Instance.Manager.activeLoader.Initialize();
+                XRGeneralSettings.Instance.Manager.activeLoader.Start();
+            }
+            else
+            {
+                XRGeneralSettings.Instance.Manager.activeLoader.Stop();
+                XRGeneralSettings.Instance.Manager.activeLoader.Deinitialize();
+            }
+
+            IsVrEnabled = IsInitialized;
+        }
+    }
+
+    private void SetUpXr()
+    {
+        isXrSetUp = true;
+
         var xrManagerBundle = VrAssetManager.LoadBundle("xrmanager");
 
         foreach (var xrManager in xrManagerBundle.LoadAllAssets())
@@ -33,27 +57,5 @@ public class ModXrManager : MonoBehaviour
         // Reference OpenXRSettings just to make this work.
         // TODO figure out how to do this properly.
         OpenXRSettings unused;
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.F3))
-        {
-            if (!IsVrEnabled)
-            {
-                XRGeneralSettings.Instance.Manager.StartSubsystems();
-                XRGeneralSettings.Instance.Manager.activeLoader.Initialize();
-                XRGeneralSettings.Instance.Manager.activeLoader.Start();
-            }
-            else
-            {
-                XRGeneralSettings.Instance.Manager.activeLoader.Stop();
-                XRGeneralSettings.Instance.Manager.activeLoader.Deinitialize();
-            }
-
-            IsVrEnabled = IsInitialized;
-
-            OnVrModeChange?.Invoke(IsVrEnabled);
-        }
     }
 }
