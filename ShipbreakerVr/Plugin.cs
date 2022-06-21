@@ -10,8 +10,6 @@ public class Plugin : BaseUnityPlugin
 {
     private bool lights = true;
 
-    private bool shadows = true;
-
     // TODO find a good way to check this.
     private void Awake()
     {
