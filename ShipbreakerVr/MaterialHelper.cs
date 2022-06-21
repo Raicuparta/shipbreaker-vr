@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
 
@@ -24,6 +25,13 @@ public static class MaterialHelper
     public static void MakeGraphicChildrenDrawOnTop(GameObject parent)
     {
         var graphics = parent.GetComponentsInChildren<Graphic>(true);
-        foreach (var graphic in graphics) MakeGraphicDrawOnTop(graphic);
+        foreach (var graphic in graphics)
+        {
+            var text = graphic.GetComponent<TMP_Text>();
+            if (text)
+                text.isOverlay = true;
+            else
+                MakeGraphicDrawOnTop(graphic);
+        }
     }
 }

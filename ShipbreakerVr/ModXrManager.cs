@@ -65,7 +65,7 @@ public class ModXrManager : MonoBehaviour
         var hudCanvasHelmet = hudSystem.transform.Find("HUDContainer/HUD Canvas - Helmet").GetComponent<Canvas>();
         hudCanvasHelmet.transform.SetParent(Camera.main.transform, false);
         hudCanvasHelmet.transform.localPosition = Vector3.forward * 3;
-        hudCanvasHelmet.transform.localScale = Vector3.one * 0.003f;
+        hudCanvasHelmet.transform.localScale = Vector3.one * 0.0025f;
         hudCanvasHelmet.transform.localRotation = Quaternion.identity;
 
         hudCanvasHelmet.renderMode = isVr ? RenderMode.WorldSpace : RenderMode.ScreenSpaceCamera;
