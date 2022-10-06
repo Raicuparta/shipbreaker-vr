@@ -14,6 +14,8 @@ public class Plugin : BaseUnityPlugin
 
     private void Awake()
     {
+        Debug.Log($"Loaded ShipbreakerVr. Game version: {Application.version}");
+
         Harmony.CreateAndPatchAll(Assembly.GetExecutingAssembly());
 
         gameObject.AddComponent<ModXrManager>();

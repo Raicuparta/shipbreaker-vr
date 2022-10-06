@@ -9,7 +9,7 @@
         <LangVersion>latest</LangVersion>
         <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
         <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
-        <GameDir>C:\Games\Hardspace- Shipbreaker\Content</GameDir>
+        <GameDir>D:\SteamLibrary\steamapps\common\Hardspace Shipbreaker</GameDir>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
