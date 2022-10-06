@@ -11,7 +11,7 @@
 
 ## Features
 
-This is a simple mod that enables a VR camera via a key binding. There are no motion controls. You will need to take your headset off at times and toggle VR on and off to be able to get through some parts of the game. Some other parts might not work even when you toggle VR off. Some people have played larged portions of the game like this, but some features are still a bit broken.
+This is a simple mod that enables a VR camera via a key binding. The UI and aiming direction are detatched from the camera for a more comfortable experience. There are no motion controls. You will need to take your headset off at times and toggle VR on and off to be able to get through some parts of the game. Some other parts might not work even when you toggle VR off. Some people have played larged portions of the game like this, but some features are still a bit broken.
 
 ## How to Install
 
