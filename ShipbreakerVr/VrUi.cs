@@ -6,7 +6,7 @@ namespace ShipbreakerVr;
 
 public class VrUi : MonoBehaviour
 {
-    private const float forwardOffset = 3f;
+    private const float forwardOffset = 1.5f;
     private Canvas canvas;
     private Vector3 initialPosition;
     private RenderMode initialRenderMode;
@@ -21,7 +21,6 @@ public class VrUi : MonoBehaviour
         initialRotation = transform.rotation;
         initialScale = transform.localScale;
         initialRenderMode = canvas.renderMode;
-        MaterialHelper.MakeGraphicChildrenDrawOnTop(gameObject);
     }
 
     private void Update()
@@ -41,7 +40,7 @@ public class VrUi : MonoBehaviour
     private void SetUpCanvas()
     {
         target = (VrCamera.MainCamera ? VrCamera.MainCamera : Camera.main)?.transform;
-        transform.localScale = Vector3.one * 0.0025f;
+        transform.localScale = Vector3.one * 0.001f;
         canvas.renderMode = RenderMode.WorldSpace;
         SetBehaviourEnabled(canvas.GetComponent<CanvasScalerImprover>(), false);
         SetBehaviourEnabled(canvas.GetComponent<CanvasScaler>(), false);
@@ -55,6 +54,7 @@ public class VrUi : MonoBehaviour
         canvas.renderMode = initialRenderMode;
         SetBehaviourEnabled(canvas.GetComponent<CanvasScaler>(), true);
         SetBehaviourEnabled(canvas.GetComponent<CanvasScalerImprover>(), true);
+        target = null;
     }
 
     private static void SetBehaviourEnabled(MonoBehaviour behaviour, bool enabled)
