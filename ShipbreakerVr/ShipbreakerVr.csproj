@@ -1,48 +1,42 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
     <PropertyGroup>
         <TargetFramework>net48</TargetFramework>
         <AssemblyName>ShipbreakerVr</AssemblyName>
         <Description>Hardspace: Shipbreaker VR mod</Description>
-        <Version>0.1.0</Version>
+        <Version>0.3.0</Version>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <LangVersion>latest</LangVersion>
         <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
         <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
-        <GameDir>D:\SteamLibrary\steamapps\common\Hardspace Shipbreaker</GameDir>
+        <OutputPath>$(PublishDir)\BepInEx\plugins\ShipbreakerVr</OutputPath>
     </PropertyGroup>
 
-    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-        <OutputPath>$(GameDir)\BepInEx\plugins\ShipbreakerVr</OutputPath>
-    </PropertyGroup>
-
-    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-        <OutputPath>ReleaseFiles\BepInEx\plugins\ShipbreakerVr</OutputPath>
-    </PropertyGroup>
-
-    <Target Name="Zip release" AfterTargets="PostBuildEvent" Condition=" '$(Configuration)' == 'Release' ">
+    <Target Name="Copy mod files" AfterTargets="PostBuildEvent">
         <ItemGroup>
-            <ReleaseFiles Include="ReleaseFiles\**" />
-            <ReleaseFiles Include="ReleaseFiles\**" />
+            <_ModFiles Remove="@(_ModFiles)"/>
+            <_ModFiles Include="ModFiles\**"/>
         </ItemGroup>
-        <MakeDir Directories="bin\Release" />
-        <ZipDirectory SourceDirectory="ReleaseFiles" DestinationFile="bin\Release\$(AssemblyName).zip" Overwrite="true" />
+        <Copy SourceFiles="@(_ModFiles)" DestinationFiles="$(PublishDir)%(RecursiveDir)%(Filename)%(Extension)"/>
     </Target>
 
     <ItemGroup>
-        <PackageReference Include="BepInEx.Analyzers" Version="1.0.8" PrivateAssets="all" />
-        <PackageReference Include="ShipbreakerGameLibs" Version="1.0.21" />
-        <PackageReference Include="BepInEx.Core" Version="5.4.19" />
-        <PackageReference Include="BepInEx.PluginInfoProps" Version="1.1.0" />
-    </ItemGroup>
-
-    <ItemGroup Condition="'$(TargetFramework.TrimEnd(`0123456789`))' == 'net'">
-        <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.2" PrivateAssets="all" />
+        <PackageReference Include="BepInEx.Analyzers" Version="1.0.8" PrivateAssets="all"/>
+        <PackageReference Include="ShipbreakerGameLibs" Version="1.2.1.260301"/>
+        <PackageReference Include="BepInEx.Core" Version="5.4.19"/>
+        <PackageReference Include="BepInEx.PluginInfoProps" Version="1.1.0"/>
     </ItemGroup>
 
     <ItemGroup>
-        <None Remove="AssetBundles\xrmanager" />
-        <None Remove="AssetBundles\xrmanager.manifest" />
+        <Content Include="ModFiles\**"/>
+    </ItemGroup>
+
+    <ItemGroup Condition="'$(TargetFramework.TrimEnd(`0123456789`))' == 'net'">
+        <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.2" PrivateAssets="all"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Remove="AssetBundles\xrmanager"/>
+        <None Remove="AssetBundles\xrmanager.manifest"/>
     </ItemGroup>
 
     <ItemGroup>

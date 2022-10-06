@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShipbreakerVr", "ShipbreakerVr\ShipbreakerVr.csproj", "{68076218-441C-40DF-80C9-92C6E51B699F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShipbreakerVrPatcher", "ShipbreakerVrPatcher\ShipbreakerVrPatcher.csproj", "{89932395-E5B7-4511-B0F3-9525E5026FE0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{68076218-441C-40DF-80C9-92C6E51B699F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{68076218-441C-40DF-80C9-92C6E51B699F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{68076218-441C-40DF-80C9-92C6E51B699F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89932395-E5B7-4511-B0F3-9525E5026FE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89932395-E5B7-4511-B0F3-9525E5026FE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89932395-E5B7-4511-B0F3-9525E5026FE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89932395-E5B7-4511-B0F3-9525E5026FE0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

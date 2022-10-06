@@ -1,0 +1,19 @@
+{
+  "id": "shipbreaker-vr",
+  "modTitle": "ShipbreakerVR",
+  "gameTitle": "Hardspace: Shipbreaker",
+  "providers": [
+    {
+      "providerId": "steam",
+      "gameIdentifier": "Hardspace Shipbreaker",
+      "requireAdmin": false,
+      "gameExe": "Shipbreaker.exe"
+    },
+    {
+      "providerId": "xbox",
+      "gameIdentifier": "Hardspace: Shipbreaker",
+      "requireAdmin": true,
+      "gameExe": "Shipbreaker.exe"
+    }
+  ]
+}
