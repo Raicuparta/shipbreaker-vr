@@ -9,9 +9,9 @@ public static class Patches
 {
     [HarmonyPostfix]
     [HarmonyPatch(typeof(LynxCameraController), nameof(LynxCameraController.Start))]
-    private static void CreateVrCamera(LynxCameraController __instance)
+    private static void CreateVrCamera(LynxCameraController instance)
     {
-        var camera = __instance.GetComponent<Camera>();
+        var camera = instance.GetComponent<Camera>();
         if (!camera)
         {
             Debug.LogError("Couldn't find Main Camera in LynxCameraController");
@@ -23,9 +23,9 @@ public static class Patches
 
     [HarmonyPostfix]
     [HarmonyPatch(typeof(CanvasScaler), "OnEnable")]
-    private static void MoveCanvasesToWorldSpace(CanvasScaler __instance)
+    private static void MoveCanvasesToWorldSpace(CanvasScaler instance)
     {
-        var canvas = __instance.GetComponent<Canvas>();
+        var canvas = instance.GetComponent<Canvas>();
 
         if (!canvas.isRootCanvas || canvas.renderMode == RenderMode.WorldSpace) return;
 

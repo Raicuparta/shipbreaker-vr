@@ -7,7 +7,6 @@ public class VrCamera : MonoBehaviour
 {
     private Camera vrCamera;
 
-    // TODO no public static
     public static Camera MainCamera { get; private set; }
 
     public static void Create(Camera mainCamera)

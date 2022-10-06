@@ -8,30 +8,32 @@ namespace ShipbreakerVr;
 public class ModXrManager : MonoBehaviour
 {
     public static bool IsVrEnabled;
-    private static OpenXRLoaderBase openXrLoader;
+    private static OpenXRLoaderBase _openXrLoader;
     private bool isXrSetUp;
-    private static bool IsInitialized => openXrLoader != null && openXrLoader.GetValue<bool>("isInitialized");
+    private static bool IsInitialized => _openXrLoader != null && _openXrLoader.GetValue<bool>("isInitialized");
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F3))
+        if (Input.GetKeyDown(KeyCode.F3)) ToggleXr();
+    }
+
+    private void ToggleXr()
+    {
+        if (!isXrSetUp) SetUpXr();
+
+        if (!IsVrEnabled)
         {
-            if (!isXrSetUp) SetUpXr();
-
-            if (!IsVrEnabled)
-            {
-                XRGeneralSettings.Instance.Manager.StartSubsystems();
-                XRGeneralSettings.Instance.Manager.activeLoader.Initialize();
-                XRGeneralSettings.Instance.Manager.activeLoader.Start();
-            }
-            else
-            {
-                XRGeneralSettings.Instance.Manager.activeLoader.Stop();
-                XRGeneralSettings.Instance.Manager.activeLoader.Deinitialize();
-            }
-
-            IsVrEnabled = IsInitialized;
+            XRGeneralSettings.Instance.Manager.StartSubsystems();
+            XRGeneralSettings.Instance.Manager.activeLoader.Initialize();
+            XRGeneralSettings.Instance.Manager.activeLoader.Start();
         }
+        else
+        {
+            XRGeneralSettings.Instance.Manager.activeLoader.Stop();
+            XRGeneralSettings.Instance.Manager.activeLoader.Deinitialize();
+        }
+
+        IsVrEnabled = IsInitialized;
     }
 
     private void SetUpXr()
@@ -52,7 +54,7 @@ public class ModXrManager : MonoBehaviour
         xrManagerSettings.InitializeLoaderSync();
         if (xrManagerSettings.activeLoader == null) throw new Exception("Cannot initialize OpenVR Loader");
 
-        openXrLoader = xrManagerSettings.ActiveLoaderAs<OpenXRLoaderBase>();
+        _openXrLoader = xrManagerSettings.ActiveLoaderAs<OpenXRLoaderBase>();
 
         // Reference OpenXRSettings just to make this work.
         // TODO figure out how to do this properly.

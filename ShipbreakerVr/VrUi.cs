@@ -6,7 +6,7 @@ namespace ShipbreakerVr;
 
 public class VrUi : MonoBehaviour
 {
-    private const float forwardOffset = 1.5f;
+    private const float ForwardOffset = 1.5f;
     private Canvas canvas;
     private Vector3 initialPosition;
     private RenderMode initialRenderMode;
@@ -33,7 +33,7 @@ public class VrUi : MonoBehaviour
     {
         if (!target) return;
 
-        transform.position = target.position + target.forward * forwardOffset;
+        transform.position = target.position + target.forward * ForwardOffset;
         transform.rotation = target.rotation;
     }
 

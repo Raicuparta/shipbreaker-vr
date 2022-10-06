@@ -7,7 +7,7 @@ using Mono.Cecil;
 
 public static class Patcher
 {
-    public static IEnumerable<string> TargetDLLs { get; } = new[] {"Assembly-CSharp.dll"};
+    public static IEnumerable<string> TargetDLLs { get; } = new[] { "Assembly-CSharp.dll" };
 
     public static void Patch(AssemblyDefinition assembly)
     {
@@ -16,7 +16,7 @@ public static class Patcher
     public static void Initialize()
     {
         Console.WriteLine("Patching ShipbreakerVR...");
-        
+
         var patcherAssemblyPath = Assembly.GetExecutingAssembly().Location;
         Console.WriteLine("installerPath " + patcherAssemblyPath);
 
@@ -27,26 +27,23 @@ public static class Patcher
         var patcherFolderPath = Path.GetDirectoryName(patcherAssemblyPath);
 
         if (patcherFolderPath == null)
-        {
             throw new DirectoryNotFoundException(
                 $"Failed to find patcherFolderPath in patcherAssemblyPath ({patcherAssemblyPath})");
-        }
-        
+
         var copyFolderPath = Path.Combine(patcherFolderPath, "CopyToGame");
         CopyDirectory(copyFolderPath, gameFolderPath, true);
     }
-    
+
     private static void CopyDirectory(string sourceDir, string destinationDir, bool recursive)
     {
-        Console.WriteLine($"Copying files from {sourceDir} to {destinationDir} {(recursive ? "recursively" : "non-recursively")}");
-        
+        Console.WriteLine(
+            $"Copying files from {sourceDir} to {destinationDir} {(recursive ? "recursively" : "non-recursively")}");
+
         var directoryInfo = new DirectoryInfo(sourceDir);
 
         if (!directoryInfo.Exists)
-        {
             throw new DirectoryNotFoundException($"Source directory not found: {directoryInfo.FullName}");
-        }
-        
+
         var directories = directoryInfo.GetDirectories();
 
         Directory.CreateDirectory(destinationDir);

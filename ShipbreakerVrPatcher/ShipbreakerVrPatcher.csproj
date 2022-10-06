@@ -19,7 +19,7 @@
         <DebugType>none</DebugType>
     </PropertyGroup>
     <ItemGroup>
-        <PackageReference Include="Mono.Cecil" Version="0.10.4" IncludeAssets="compile" />
+        <PackageReference Include="Mono.Cecil" Version="0.10.4" IncludeAssets="compile"/>
     </ItemGroup>
     <ItemGroup>
         <Content Include="CopyToGame/**">
