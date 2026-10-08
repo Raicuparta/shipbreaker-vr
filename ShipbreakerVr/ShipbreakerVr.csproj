@@ -1,85 +1,40 @@
 <Project Sdk="Microsoft.NET.Sdk">
-    <PropertyGroup>
-        <TargetFramework>net48</TargetFramework>
-        <AssemblyName>ShipbreakerVr</AssemblyName>
-        <Description>Hardspace: Shipbreaker VR mod</Description>
-        <Version>0.3.0</Version>
-        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-        <LangVersion>latest</LangVersion>
-        <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-        <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
-        <OutputPath>$(PublishDir)\BepInEx\plugins\ShipbreakerVr</OutputPath>
-    </PropertyGroup>
-
-    <Target Name="Copy mod files" AfterTargets="PostBuildEvent">
-        <ItemGroup>
-            <_ModFiles Remove="@(_ModFiles)"/>
-            <_ModFiles Include="ModFiles\**"/>
-        </ItemGroup>
-        <Copy SourceFiles="@(_ModFiles)" DestinationFiles="$(PublishDir)%(RecursiveDir)%(Filename)%(Extension)"/>
-    </Target>
-
-    <ItemGroup>
-        <PackageReference Include="BepInEx.Analyzers" Version="1.0.8" PrivateAssets="all"/>
-        <PackageReference Include="ShipbreakerGameLibs" Version="1.2.1.260301"/>
-        <PackageReference Include="BepInEx.Core" Version="5.4.19"/>
-        <PackageReference Include="BepInEx.PluginInfoProps" Version="1.1.0"/>
-    </ItemGroup>
-
-    <ItemGroup>
-        <Content Include="ModFiles\**"/>
-    </ItemGroup>
-
-    <ItemGroup Condition="'$(TargetFramework.TrimEnd(`0123456789`))' == 'net'">
-        <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.2" PrivateAssets="all"/>
-    </ItemGroup>
-
-    <ItemGroup>
-        <None Remove="AssetBundles\xrmanager"/>
-        <None Remove="AssetBundles\xrmanager.manifest"/>
-    </ItemGroup>
-
-    <ItemGroup>
-        <Reference Include="Unity.InputSystem, Version=1.0.2.0, Culture=neutral, PublicKeyToken=null">
-            <HintPath>..\ShipbreakerVrUnity\Build\ShipbreakerVrUnity_Data\Managed\Unity.InputSystem.dll</HintPath>
-        </Reference>
-        <Reference Include="Unity.XR.Management">
-            <HintPath>..\ShipBreakerVrUnity\Build\ShipBreakerVrUnity_Data\Managed\Unity.XR.Management.dll</HintPath>
-        </Reference>
-        <Reference Include="Unity.XR.Management, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-            <HintPath>..\ShipbreakerVrUnity\Build\ShipbreakerVrUnity_Data\Managed\Unity.XR.Management.dll</HintPath>
-        </Reference>
-        <Reference Include="Unity.XR.OpenXR, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-            <HintPath>..\ShipbreakerVrUnity\Build\ShipbreakerVrUnity_Data\Managed\Unity.XR.OpenXR.dll</HintPath>
-        </Reference>
-        <Reference Include="Unity.XR.OpenXR.Features.ConformanceAutomation, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-            <HintPath>..\ShipbreakerVrUnity\Build\ShipbreakerVrUnity_Data\Managed\Unity.XR.OpenXR.Features.ConformanceAutomation.dll</HintPath>
-        </Reference>
-        <Reference Include="Unity.XR.OpenXR.Features.MockDriver, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-            <HintPath>..\ShipbreakerVrUnity\Build\ShipbreakerVrUnity_Data\Managed\Unity.XR.OpenXR.Features.MockDriver.dll</HintPath>
-        </Reference>
-        <Reference Include="Unity.XR.OpenXR.Features.MockRuntime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-            <HintPath>..\ShipbreakerVrUnity\Build\ShipbreakerVrUnity_Data\Managed\Unity.XR.OpenXR.Features.MockRuntime.dll</HintPath>
-        </Reference>
-        <Reference Include="Unity.XR.OpenXR.Features.OculusQuestSupport, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-            <HintPath>..\ShipbreakerVrUnity\Build\ShipbreakerVrUnity_Data\Managed\Unity.XR.OpenXR.Features.OculusQuestSupport.dll</HintPath>
-        </Reference>
-        <Reference Include="Unity.XR.OpenXR.Features.RuntimeDebugger, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-            <HintPath>..\ShipbreakerVrUnity\Build\ShipbreakerVrUnity_Data\Managed\Unity.XR.OpenXR.Features.RuntimeDebugger.dll</HintPath>
-        </Reference>
-        <Reference Include="Unity.XR.OpenXR.TestHelpers, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-            <HintPath>..\ShipbreakerVrUnity\Build\ShipbreakerVrUnity_Data\Managed\Unity.XR.OpenXR.TestHelpers.dll</HintPath>
-        </Reference>
-    </ItemGroup>
-
-    <ItemGroup>
-        <Content Include="..\ShipBreakerVrUnity\AssetBundles\xrmanager">
-            <Link>AssetBundles\xrmanager</Link>
-            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </Content>
-        <Content Include="..\ShipBreakerVrUnity\AssetBundles\xrmanager.manifest">
-            <Link>AssetBundles\xrmanager.manifest</Link>
-            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </Content>
-    </ItemGroup>
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <AssemblyName>ShipbreakerVr</AssemblyName>
+    <Version>0.4.44</Version>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <OutputPath>$(PublishDir)BepInEx\plugins\ShipbreakerVr\</OutputPath>
+    <AutomaticallyUseReferenceAssemblyPackages>false</AutomaticallyUseReferenceAssemblyPackages>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net48" Version="1.0.3" PrivateAssets="all" />
+    <Reference Include="$(GameManagedDir)\*.dll" Exclude="$(GameManagedDir)\System*.dll;$(GameManagedDir)\mscorlib.dll;$(GameManagedDir)\netstandard.dll;$(GameManagedDir)\Mono*.dll">
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="BepInEx">
+      <HintPath>ModFiles\BepInEx\core\BepInEx.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="0Harmony">
+      <HintPath>ModFiles\BepInEx\core\0Harmony.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="$(UnityManagedDir)\Unity.InputSystem.dll;$(UnityManagedDir)\Unity.XR.Management.dll;$(UnityManagedDir)\Unity.XR.OpenXR*.dll;$(UnityManagedDir)\Unity.Subsystem.Registration.dll">
+      <Private>true</Private>
+    </Reference>
+    <Content Include="..\ShipbreakerVrUnity\AssetBundles\xrmanager;$(UnityProjectDir)\AssetBundles\debugrays">
+      <Link>AssetBundles\%(Filename)%(Extension)</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Target Name="ValidateDependencies" BeforeTargets="ResolveReferences">
+    <Error Condition="!Exists('$(GameManagedDir)\BBI.Unity.Game.dll')" Text="Set GameDir to your installed Shipbreaker folder (containing Shipbreaker.exe). See docs/BUILD.md." />
+    <Error Condition="!Exists('$(UnityManagedDir)\Unity.XR.OpenXR.dll')" Text="Unity runtime dependencies are missing. Run scripts/build.ps1 with the pinned Unity editor and GameDir." />
+    <Error Condition="!Exists('$(UnityProjectDir)\AssetBundles\debugrays')" Text="Build the debugrays asset bundle using the pinned Unity editor before compiling the mod." />
+  </Target>
+  <Target Name="CopyModFiles" AfterTargets="Build">
+    <ItemGroup><ModFiles Include="ModFiles\**\*" /></ItemGroup>
+    <Copy SourceFiles="@(ModFiles)" DestinationFiles="@(ModFiles->'$(PublishDir)%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" />
+  </Target>
 </Project>

@@ -1,34 +1,55 @@
-# ShipbreakerVr
+# Shipbreaker VR — 0.4.44 beta1
 
-[ShipbreakerVr](https://raicuparta.com/shipbreaker-vr-mod) is a basic VR mod for [Hardspace: Shipbreaker](https://store.steampowered.com/app/1161580/Hardspace_Shipbreaker/).
+An unofficial Windows PCVR mod for **Hardspace: Shipbreaker**, based on [Raicuparta/shipbreaker-vr](https://github.com/Raicuparta/shipbreaker-vr). Uses OpenXR for headset/controller tracking and game-specific adapters for tools, movement and menus.
 
-[![Raicuparta's VR mods](https://img.shields.io/badge/-raicuparta.com-blue?style=flat-square&color=563397&logo=data%3Aimage%2Fpng%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAABQAAAASCAMAAABsDg4iAAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAApdQTFRFAAAA9sIq9sIq9sIq9sIq9sIq9sIq9sIq9sIq9sIq9sIq9sIq9sIq9sIq9sIq9sIq98Mp9sIq9sIq9sIq56xC4aJM3p1R1I5g%2Bscl9sIq9sIq2ZZYr1Wd9L8t8Lkz98Mpt2GQ0otj9sIq9sIq9sIq7bQ5pkirxXh4rVOe77c2p0qo5KZI9sIq9sIq9sIq9cErv26CoD60p0mprlOerlSe8bsx98Iq9sIq9sIq9sIq9sIq9sIq9sIq77wpzaEj9cIq874v6a8%2B7rY2zYNr6KxB9cEpim0XupMg9sIq9sIq9sIqyZ8jEg8EpYIc8b0t8r4w8b0y7ro46bU%2FoHwqDAkGZVAW9sIq9sIq9sIq9L8r7bcs4qsv2J4z16NXz5tlfFpPHRUOUj4lvYtw0pqC0pqIi2ZbGhMRlGxk3qKW%2BMUqs3M%2FqWc%2Bp2U9xohx2Z6T3KCV36OXv4uBUjw4HhYUonZuxI%2BEKx8deFhRZ0tG66yf97Sn4KCPtnVSsW9K6aiZ76%2Bi8bCj9LKlak5IV0A7vYmAzYCN7Xym4IqatIF7Vj876qqe6aqe9rSnxYNkz4xy9rSn9bOm46aa%2BLSnuoh%2Brmh48XOq7lyr7VWr7lqr7maq5n2hYkdDKB0b97Sn9bKk9rOm97Sn3KGVJxwapnlwTjY111aa7lWsx0iPKhkduYh%2F97Sn97Sn9bKma05IBwUFEw0NditV3U%2Bg41Gk7lWr3E%2BflzZtQBcuQi8s%2F8u897Sn97Sn97Sn5aebc1NOY0dDIg4YiFNeXyNEaTtJW0I%2BfVtUcVNN97Sn97Sn152R9LGlwIyC4KOX%2BLWo%2FLms97Sn97Sn97Sn97Sn97Sn97Sn97Sn97Sn97Sn97Sn97Sn97Sn97Sn97Sn97SnUVD75gAAAN10Uk5TAAIdZJytk1UUDXnm%2Fv%2F9xyIgu%2Fv%2F%2F%2F%2B0AkTi%2F%2F%2F%2F%2F%2F%2F%2F%2FCox6v%2F%2F%2F%2F%2F%2F%2F%2F99ATz%2F%2F%2F%2F%2F%2F%2F%2F%2F7qWYqooz5P%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F3v2zF%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F708bBt%2F8%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FhdC5n%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2BUTe%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F1mH%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2Fimj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FlEi8%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F3gwBav3%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2Flkbu7%2F%2F%2F%2F%2F8QMCPsv598hDD0BwlKCTOQ4NJ5LvAAAAs0lEQVQYGQXBPSoAAACA0e9NUn6SFGXCYiAxipWUmQNYHMBkNzmAxQGYLWZmkgwWm6IkkZKF91QVwE9VqhqEwkeVqjF%2BB%2FzUIC%2BVaspXjQCeKjXrtZoEuF%2B41%2BLbV9UMAKy6q5YAuF5j66pqHQDO7AIAnJR9AABH6RAA4CAdAwDspVOAz2oUO%2Bncd0MAsJkueW7axTZgtdTlsMc%2BR%2F7m4X18pVQ3uK1a5nmjUtUDeJswV9U%2FPAYlllR%2F3sAAAAAASUVORK5CYII%3D)](https://raicuparta.com)
-[![Support on Patreon](https://img.shields.io/badge/dynamic/json?style=flat-square&color=D93841&label=Patreon&logoColor=fff&query=data.attributes.patron_count&url=https%3A%2F%2Fwww.patreon.com%2Fapi%2Fcampaigns%2F7004713&logo=patreon)](https://www.patreon.com/raivr)
-[![Donate with PayPal](https://img.shields.io/badge/PayPal-$$$-blue?style=flat-square&color=00457C&logo=data%3Aimage%2Fpng%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAABwAAAAhCAMAAAD9NzvVAAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAZ5QTFRFAAAA%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F2jFIFAAAAIp0Uk5TAE%2FH0tPU1dDJtH5FDL3%2F8ookBffjOR7%2BxkZbZIuMo6qczYIB8FM8jR%2F6F%2FV2pArggT8CuZQEv%2F0OzrEvXPjxIN%2F8vBHuMvlRCGZHtrK3q48TBjZhaocYKSgqMTtVhOu7Foj0PtHh87DKupYQJc%2F7qNgm5uozxa1LEnlASokdbuK1FTQs3nTtLWvW2bD6ewAAAYBJREFUeJxt0fk%2FAkEUAPBH7ZZrQgm5qo3kiKRcyVkUcuQIEcp93%2Fd99l%2FbZpaamvfLm33fz9t9bwdAjKxsmUwul3Mcz8kVypzcvHxIRgGiQ1VY9G%2FFapQempI%2F1GYYKi37e3N5JiKkk7CChZUSVrGwWsIaFuolNLDQKAgJE0wsrK0zJwauZ5mlwdjYJGItC5utLUgpYivDVDYbQiaANjsD2x1OhDoAOrsyrbvH1YuQG6CvP50GBodsw2LmADxumrz2kVEfbhB%2Fkr8U19SGsfEJe2BSNzU9o8cVUxBgljTMzS%2BEQotLy%2BEV5yqpRNYA1vFpI6qLKRTc5lbyyz5xzW183Antpo21ZwXYL8PHwMEhRUfHDWKj54R88rQl1c6C1sSdhM%2FxU8WFiizCGy6vzNc35DJvj3Dx7p60PEBqkJ3Q4xNOFj%2BFZEivw4yzxkPhMy7ywgtZXEshmWfsVYmzvpPCt%2FJEvEc%2FMH4KwAjXF8Ywy2CF3M03E39i8Xicj1ip4i%2BcY08HRSSK8AAAAABJRU5ErkJggg%3D%3D)](https://paypal.me/raicuparta/5usd)
-[![Raicuparta's Youtube](https://img.shields.io/endpoint?color=AD1717&label=YouTube&logoColor=fff&style=flat-square&url=https%3A%2F%2Fyoutube-channel-badge-orpin.vercel.app%2Fapi%2Fsubscriber)](https://www.youtube.com/c/Raicuparta)
-[![Twitter @Raicuparta](https://img.shields.io/badge/Twitter-sucks-1DA1F2?logo=twitter&style=flat-square&logoColor=white)](https://twitter.com/Raicuparta)
-[![Mastodon @Raicuparta](https://img.shields.io/mastodon/follow/109258008992010873?color=6a5df9&domain=https%3A%2F%2Fmastodon.gamedev.place&label=Mastodon&logo=mastodon&logoColor=white&style=flat-square)](https://mastodon.gamedev.place/@Raicuparta)
+Tested during development with Pico Neo 3 over Steam Link and Steam Frame through SteamVR. Other OpenXR headsets may work but are unverified. This is not a standalone Frame game.
 
-[![image](https://user-images.githubusercontent.com/3955124/194423683-ad9b4aa2-bc8c-4801-9be1-aa9733e843ce.png)](https://www.youtube.com/watch?v=UGGtz1lYMNw)
+## Install or update
 
-## Features
+1. Install the Steam Windows version of Shipbreaker and run it once normally. Close the game.
+2. Extract **the entire portable ZIP** to a normal folder. Do not run it inside the ZIP.
+3. Run **Install.cmd**. It finds the game through Steam's libraries, or opens a folder picker. Select the folder containing `Shipbreaker.exe` if asked.
+4. Connect the headset and controllers. Start SteamVR with SteamVR selected as the active OpenXR runtime, then launch Shipbreaker from Steam.
+5. VR starts automatically. Keep the game window focused, close the SteamVR dashboard and release all buttons/center both sticks before testing.
 
-This is a simple mod that enables a VR camera via a key binding. The UI and aiming direction are detatched from the camera for a more comfortable experience. There are no motion controls. You will need to take your headset off at times and toggle VR on and off to be able to get through some parts of the game. Some other parts might not work even when you toggle VR off. Some people have played larged portions of the game like this, but some features are still a bit broken.
+No Unity editor, developer SDK, separate BepInEx installation or mod manager is needed. Setup does not change SteamVR resolution, game graphics settings or saves. Existing mod settings are preserved; obsolete test keys are removed with a backup. Fresh settings use the accepted HUD/tool calibration, controller navigation and haptics. Automatic performance recording is off.
 
-## How to Install
+**Controls:** [Gamepad, Pico and Frame guide](docs/CONTROLS.md). F3 toggles VR/desktop. The controller gesture also works after OpenXR connects: center both sticks, press both stick clicks first, add both full grips and hold all four for two seconds, then release.
 
-[Get ShipbreakerVR on itch.io](https://raicuparta.itch.io/shipbreaker-vr). I recommend using the [**itch.io app**](https://itch.io/app) to install the mod. This way you can get automatic updates.
+## What's included
 
-Run `RaiManager.exe` (or click Open in the itch.io app) and follow the instructions in the installer.
+- Tracked controller tool aim, movement, tool selection, menus and haptics.
+- Automatic couch/gamepad mode with native bindings, right-stick aiming, independent head looking and visible aiming rings.
+- Consistent 65%-size held tools in both modes, with immediate ordinary tool switching and synchronized tool/heat-bar hiding during grabs and interactions.
+- Disembodied tools with calibrated beam origins; stock tool range and game rules.
+- Head-following curved gameplay HUD, loading/menu composition and clipped ship cards.
+- Structural scanner room labels and pressure indicators.
+- Head-following helmet damage, native-sized white cracks and full-view critical shattered glass.
+- Native Frame ABXY/D-pad/LB/RB/Menu/View input, plus full-grip shortcuts. Pico retains its own layout.
+- UI geometry caching and sorting optimizations. Performance depends on game scene, render resolution, CPU/GPU and streaming; no frame-rate guarantee.
 
-## How to play
+Menus use sticks/buttons. No laser mouse, decorative menu rays, fake controllers or menu hands are included. The gameplay HUD curvature does not reshape the normal menu panels.
 
-- Start the game as usual.
-- Wait until you're fully in game, floating in space.
-- **Press F3 to turn on VR**. If you get to a part of the game where VR isn't working (like if you need to interact with the UI), press F3 again to disable VR, and play that part with mouse & keyboard.
+## Uninstall and recovery
 
-## Performance
+Close the game, then run **Uninstall.cmd** from the extracted package. It removes files added by this installer and restores the originals it replaced. **If a previous VR mod was installed, uninstall restores that older mod.** Settings, saves, logs and backup files stay intact. Shared loader files remain when other plugin/patcher folders are detected.
 
-There are two extra key bindings for lowering quality to get better performance:
-- **Press F5 to enable ultra low quality mode**. This is lower than what the game normally allows you to pick.
-- **Press F6 to disable all lights** in the current scene. Looks sad but can give you a performance boost.
+Keep `ShipbreakerVR-InstallState` in the game directory: it contains the original backups and installation record. If setup is interrupted, run **Recover.cmd** before installing/uninstalling again. Do not manually delete that folder while the installation is active.
+
+Setup verifies hashes before replacing/restoring files and stops on externally changed files or a conflicting shared loader. It supports normal physical folders, not linked/junction game paths. If access is denied, check folder permissions; setup does not automatically elevate.
+
+**Check.cmd** performs a read-only package/game-folder preflight. Advanced/manual path selection:
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\Setup.ps1 -GameDir 'D:\SteamLibrary\steamapps\common\Hardspace Shipbreaker'
+```
+
+The scripts are unsigned. The ZIP SHA-256 detects accidental corruption; it is not a publisher signature. Obtain the package from a trusted source.
+
+## Troubleshooting and status
+
+See [known issues and test checklist](docs/KNOWN-ISSUES.md). Close the game before sharing `BepInEx/LogOutput.log`; review it for local paths/system details first. F7 records UI diagnostics. F9 starts/stops an optional timing capture; reports are written under `BepInEx`.
+
+This beta adds couch/gamepad play and tool presentation improvements to the 0.4.32-beta1 baseline. The user accepted the final 0.4.44 gameplay test, including the heat-bar and tool-switch corrections. The package uses that accepted binary; the final ZIP is validated separately from headset gameplay. See docs/RELEASE-VALIDATION.md in the source repository. Other headset/runtime and Steam Input layout combinations remain unverified.
+
+Source build instructions: [BUILD.md](docs/BUILD.md). Architecture and file inventory are in the source repository's `docs` folder. Mod source retains the upstream MIT license; bundled runtime notices are in [THIRD-PARTY.md](THIRD-PARTY.md) and `licenses`.

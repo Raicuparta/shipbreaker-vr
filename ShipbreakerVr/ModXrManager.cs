@@ -1,63 +1,111 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.XR;
 using UnityEngine.XR.Management;
 using UnityEngine.XR.OpenXR;
+using ShipbreakerVr.Tracking;
+using BepInEx.Configuration;
 
 namespace ShipbreakerVr;
 
+[DefaultExecutionOrder(-10000)]
 public class ModXrManager : MonoBehaviour
 {
-    public static bool IsVrEnabled;
-    private static OpenXRLoaderBase _openXrLoader;
-    private bool isXrSetUp;
-    private static bool IsInitialized => _openXrLoader != null && _openXrLoader.GetValue<bool>("isInitialized");
+    public static bool IsVrEnabled { get; private set; }
+    public static bool IsSessionRunning { get; private set; }
+    public static bool ToggleInputConsumed { get; private set; }
+    private static ConfigEntry<bool> startInVr;
+    private XRManagerSettings manager;
+    private bool requested;
+    private readonly OpenXrTrackingProvider tracking = new OpenXrTrackingProvider();
+    private readonly VrToggleGesture gesture = new VrToggleGesture();
+    private InputSystemUpdateBridge bridge;
+    private bool inputFailed;
+
+    internal static void Configure(ConfigFile config) => startInVr = config.Bind("VR", "StartInVr", true,
+        "Start VR automatically when OpenXR is available. F3 or both grips + both centered stick clicks held for 2 seconds switches view; runtime stays connected for controller toggling.");
+    private void Start() { if (startInVr.Value) ToggleXr(); }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.F3)) ToggleXr();
+        var display = manager?.activeLoader?.GetLoadedSubsystem<XRDisplaySubsystem>();
+        IsSessionRunning = display != null && display.running;
+        if (!inputFailed)
+        {
+            try
+            {
+                var eligible = IsSessionRunning && Application.isFocused;
+                if (eligible)
+                {
+                    if (bridge == null) bridge = new InputSystemUpdateBridge();
+                    bridge.UpdateIfNeeded(); tracking.Sample();
+                    eligible = tracking.Head.IsValid && tracking.LeftHand.Grip.IsValid && tracking.RightHand.Grip.IsValid;
+                }
+                else tracking.Clear();
+                if (gesture.Sample(eligible, tracking.LeftHand.Inputs, tracking.RightHand.Inputs, Time.unscaledTime)) ToggleXr();
+                ToggleInputConsumed = gesture.ConsumesButtons;
+            }
+            catch (Exception error)
+            {
+                inputFailed = true; ToggleInputConsumed = false;
+                Debug.LogError("[ShipbreakerVr] Controller VR toggle stopped; F3 remains available. " + error);
+            }
+        }
+        IsVrEnabled = requested && IsSessionRunning;
+        if (IsVrEnabled) VrCamera.EnsureEarlyRig();
     }
 
     private void ToggleXr()
     {
-        if (!isXrSetUp) SetUpXr();
-
-        if (!IsVrEnabled)
+        if (manager?.activeLoader != null)
         {
-            XRGeneralSettings.Instance.Manager.StartSubsystems();
-            XRGeneralSettings.Instance.Manager.activeLoader.Initialize();
-            XRGeneralSettings.Instance.Manager.activeLoader.Start();
-        }
-        else
-        {
-            XRGeneralSettings.Instance.Manager.activeLoader.Stop();
-            XRGeneralSettings.Instance.Manager.activeLoader.Deinitialize();
+            requested = !requested;
+            Debug.Log("[ShipbreakerVr] View switched to " + (requested ? "VR" : "desktop") + "; OpenXR kept running for controller toggle.");
+            return;
         }
 
-        IsVrEnabled = IsInitialized;
+        try
+        {
+            SetUpXr();
+            manager.InitializeLoaderSync();
+            if (!(manager.activeLoader is OpenXRLoaderBase))
+                throw new InvalidOperationException("OpenXR loader could not initialize. Check the active PC OpenXR runtime and headset connection.");
+            requested = true;
+            manager.StartSubsystems();
+            Debug.Log("[ShipbreakerVr] OpenXR start requested; waiting for the display subsystem.");
+        }
+        catch (Exception exception)
+        {
+            StopXr();
+            Debug.LogError($"[ShipbreakerVr] OpenXR startup failed. F3 retries after the runtime is available. {exception}");
+        }
     }
 
     private void SetUpXr()
     {
-        isXrSetUp = true;
-
-        var xrManagerBundle = VrAssetManager.LoadBundle("xrmanager");
-
-        foreach (var xrManager in xrManagerBundle.LoadAllAssets())
-            Debug.Log($"######## Loaded xrManager: {xrManager.name}");
-
-        var instance = XRGeneralSettings.Instance;
-        if (instance == null) throw new Exception("XRGeneralSettings instance is null");
-
-        var xrManagerSettings = instance.Manager;
-        if (xrManagerSettings == null) throw new Exception("XRManagerSettings instance is null");
-
-        xrManagerSettings.InitializeLoaderSync();
-        if (xrManagerSettings.activeLoader == null) throw new Exception("Cannot initialize OpenVR Loader");
-
-        _openXrLoader = xrManagerSettings.ActiveLoaderAs<OpenXRLoaderBase>();
-
-        // Reference OpenXRSettings just to make this work.
-        // TODO figure out how to do this properly.
-        OpenXRSettings unused;
+        if (manager != null) return;
+        VrAssetManager.LoadBundle("xrmanager").LoadAllAssets();
+        manager = XRGeneralSettings.Instance?.Manager;
+        if (manager == null) throw new InvalidOperationException("XRGeneralSettings/manager missing from xrmanager bundle.");
+        OpenXrProfiles.EnableStandardControllers();
     }
+
+    private void StopXr()
+    {
+        requested = false;
+        IsVrEnabled = false;
+        IsSessionRunning = false;
+        ToggleInputConsumed = false;
+        if (manager == null) return;
+        try { manager.StopSubsystems(); }
+        catch (Exception exception) { Debug.LogException(exception); }
+        finally
+        {
+            try { manager.DeinitializeLoader(); }
+            catch (Exception exception) { Debug.LogException(exception); }
+        }
+    }
+
+    private void OnDestroy() { bridge?.Dispose(); tracking.Clear(); StopXr(); }
 }

@@ -1,0 +1,1165 @@
+[
+  {
+    "path": ".gitignore",
+    "bytes": 70,
+    "sha256": "e14a11d6ddbaeb39486a6e07bd229f34474a0df436f422ee4ceda9bc21b84040",
+    "role": "Original build/IDE exclusions; expanded for Unity caches and generated output.",
+    "textLines": 7
+  },
+  {
+    "path": "Directory.Build.props",
+    "bytes": 515,
+    "sha256": "ddddbbd44c38e6a3d55d1195a60fe9a3f99cdef7a87ff8963c460a00dd4c535c",
+    "role": "Original author-specific RaiManager output paths; replaced by repository-local staging.",
+    "textLines": 9
+  },
+  {
+    "path": "LICENSE",
+    "bytes": 1067,
+    "sha256": "9da3aadceca4da122dc075571683648f35e727644648da8ec01897fba15dbbc0",
+    "role": "MIT licence for repository code; third-party binary/package licences remain separate.",
+    "textLines": 21
+  },
+  {
+    "path": "README.md",
+    "bytes": 7556,
+    "sha256": "67490a66a1e4f74dcc8cc4a92a7265891e0cf7635924250e66bfc14806318e5e",
+    "role": "Upstream install/play instructions, F3/F5/F6, explicit absence of motion controls.",
+    "textLines": 34
+  },
+  {
+    "path": "ShipbreakerVr.sln",
+    "bytes": 1302,
+    "sha256": "a621b1a9ac377c641b90995756fbc0ec82c35c4cec7973a162cbd6897701e063",
+    "role": "Two-project Debug/Release solution; no Unity editor build automation upstream.",
+    "textLines": 22
+  },
+  {
+    "path": "ShipbreakerVr/.gitignore",
+    "bytes": 32,
+    "sha256": "ea40ea7255586263d9da245bc070f02d3ad2523a76bd1f0f1ab8ab519577cd8b",
+    "role": "Repository support asset; retained upstream.",
+    "textLines": 1
+  },
+  {
+    "path": "ShipbreakerVr/ModFiles/BepInEx/config/BepInEx.cfg",
+    "bytes": 5420,
+    "sha256": "9923f4dead25cff2dd77b5a2d753f224aa884b5f2b79d3da10e10db0ebba7df5",
+    "role": "BepInEx cache, console, disk logging and preloader configuration.",
+    "textLines": 151
+  },
+  {
+    "path": "ShipbreakerVr/ModFiles/BepInEx/core/0Harmony.dll",
+    "bytes": 204800,
+    "sha256": "1a21cc03424fc82c3dd1346905d16494536b9595ae4162228d99fb7c285c1031",
+    "role": "Bundled loader/patching dependency: 0Harmony.dll.",
+    "textLines": null
+  },
+  {
+    "path": "ShipbreakerVr/ModFiles/BepInEx/core/0Harmony.xml",
+    "bytes": 270696,
+    "sha256": "7700b5932d735dfd9c40c83fc46942f0e97c5a6142cb7cc22f74d850f94ed12b",
+    "role": "API documentation for bundled dependency: 0Harmony.xml.",
+    "textLines": 5252
+  },
+  {
+    "path": "ShipbreakerVr/ModFiles/BepInEx/core/0Harmony20.dll",
+    "bytes": 111616,
+    "sha256": "4b2fa06106044896e84d0a739a646333d98a34fa2c61c4d1eefc0bf96f964211",
+    "role": "Bundled loader/patching dependency: 0Harmony20.dll.",
+    "textLines": null
+  },
+  {
+    "path": "ShipbreakerVr/ModFiles/BepInEx/core/BepInEx.Harmony.dll",
+    "bytes": 5632,
+    "sha256": "d0739c4a13f369094cb164c205ee4cca5392bdd7241b9f242ee13f0d4c0b1856",
+    "role": "Bundled loader/patching dependency: BepInEx.Harmony.dll.",
+    "textLines": null
+  },
+  {
+    "path": "ShipbreakerVr/ModFiles/BepInEx/core/BepInEx.Harmony.xml",
+    "bytes": 4017,
+    "sha256": "8e64366cfba59a17dabf6d0d4f93aeb6f7d7c9f2481658d2c8c214d83ae4612e",
+    "role": "API documentation for bundled dependency: BepInEx.Harmony.xml.",
+    "textLines": 86
+  },
+  {
+    "path": "ShipbreakerVr/ModFiles/BepInEx/core/BepInEx.Preloader.dll",
+    "bytes": 42496,
+    "sha256": "9678c74f47353a11afde4ab05887388bcbb69dffc4e28db93af1d1ce0b6ee635",
+    "role": "Bundled loader/patching dependency: BepInEx.Preloader.dll.",
+    "textLines": null
+  },
+  {
+    "path": "ShipbreakerVr/ModFiles/BepInEx/core/BepInEx.Preloader.xml",
+    "bytes": 7941,
+    "sha256": "153adc00be94668518061f0a8edc5cf35e33624263f87f81baa8181a279bf9c7",
+    "role": "API documentation for bundled dependency: BepInEx.Preloader.xml.",
+    "textLines": 176
+  },
+  {
+    "path": "ShipbreakerVr/ModFiles/BepInEx/core/BepInEx.dll",
+    "bytes": 125440,
+    "sha256": "475f794330ff7da4e70f892694498cf516d41eb9b064faa5797e09a1dd546b33",
+    "role": "Bundled loader/patching dependency: BepInEx.dll.",
+    "textLines": null
+  },
+  {
+    "path": "ShipbreakerVr/ModFiles/BepInEx/core/BepInEx.xml",
+    "bytes": 90957,
+    "sha256": "d2e42f713e73a39d2080b865f767ec54d8d27605e739d5b8d572f8035753fe9a",
+    "role": "API documentation for bundled dependency: BepInEx.xml.",
+    "textLines": 1869
+  },
+  {
+    "path": "ShipbreakerVr/ModFiles/BepInEx/core/HarmonyXInterop.dll",
+    "bytes": 23552,
+    "sha256": "21222a7c25a2ddea5e53e9390a693c9b9858fc824b38f9cfe4a5049648c50b6d",
+    "role": "Bundled loader/patching dependency: HarmonyXInterop.dll.",
+    "textLines": null
+  },
+  {
+    "path": "ShipbreakerVr/ModFiles/BepInEx/core/Mono.Cecil.Mdb.dll",
+    "bytes": 43008,
+    "sha256": "5896d1898f616701fff18f3b2c71e6b844d2390ef9f41e1c5fccce8cb27c698e",
+    "role": "Bundled loader/patching dependency: Mono.Cecil.Mdb.dll.",
+    "textLines": null
+  },
+  {
+    "path": "ShipbreakerVr/ModFiles/BepInEx/core/Mono.Cecil.Pdb.dll",
+    "bytes": 86528,
+    "sha256": "174db44a067f58561510af746f3caeb032037762c57a31c8d9ee32db25174984",
+    "role": "Bundled loader/patching dependency: Mono.Cecil.Pdb.dll.",
+    "textLines": null
+  },
+  {
+    "path": "ShipbreakerVr/ModFiles/BepInEx/core/Mono.Cecil.Rocks.dll",
+    "bytes": 27648,
+    "sha256": "54ac539fb5ddc8b44c0e9acd0fcb7324f89d1a072edf8ebc1b06dd691e3d3927",
+    "role": "Bundled loader/patching dependency: Mono.Cecil.Rocks.dll.",
+    "textLines": null
+  },
+  {
+    "path": "ShipbreakerVr/ModFiles/BepInEx/core/Mono.Cecil.dll",
+    "bytes": 339456,
+    "sha256": "7ae470288fff4a402899c254d0a76cefef55877f5c54f96e83c797cc5bb6e2f6",
+    "role": "Bundled loader/patching dependency: Mono.Cecil.dll.",
+    "textLines": null
+  },
+  {
+    "path": "ShipbreakerVr/ModFiles/BepInEx/core/MonoMod.RuntimeDetour.dll",
+    "bytes": 105984,
+    "sha256": "40e49bb314391cd7bddc2644f8553eeba92c194b940836b103df16955c464e0c",
+    "role": "Bundled loader/patching dependency: MonoMod.RuntimeDetour.dll.",
+    "textLines": null
+  },
+  {
+    "path": "ShipbreakerVr/ModFiles/BepInEx/core/MonoMod.RuntimeDetour.xml",
+    "bytes": 9576,
+    "sha256": "f2cb2da231583c2ffafb8625cb73d7de9adf1e9c9e9d5c3f9026fd337968939d",
+    "role": "API documentation for bundled dependency: MonoMod.RuntimeDetour.xml.",
+    "textLines": 189
+  },
+  {
+    "path": "ShipbreakerVr/ModFiles/BepInEx/core/MonoMod.Utils.dll",
+    "bytes": 187904,
+    "sha256": "9d1495f147ac93c4f81f84538c1a326e8f8a6aefc78d6289d798f3ce1162c5e9",
+    "role": "Bundled loader/patching dependency: MonoMod.Utils.dll.",
+    "textLines": null
+  },
+  {
+    "path": "ShipbreakerVr/ModFiles/BepInEx/core/MonoMod.Utils.xml",
+    "bytes": 79664,
+    "sha256": "bb113b6ea36fdac6765a6b8da1f2b35607d55b41e98209b8065f3132f3aec479",
+    "role": "API documentation for bundled dependency: MonoMod.Utils.xml.",
+    "textLines": 1549
+  },
+  {
+    "path": "ShipbreakerVr/ModFiles/CopyToGame/doorstop_config.ini",
+    "bytes": 885,
+    "sha256": "d299e1be4c88e03155446b9c7cff046ee3e2c01cad219d73726edef23867f538",
+    "role": "Doorstop boot configuration and BepInEx preloader entrypoint.",
+    "textLines": 16
+  },
+  {
+    "path": "ShipbreakerVr/ModFiles/CopyToGame/winhttp.dll",
+    "bytes": 25088,
+    "sha256": "cf9dd372ca0ddbe01153502c49f8f756197bb260001792fe766f6c0242dc7fc0",
+    "role": "Windows native Doorstop bootstrap binary, not tool/gameplay logic.",
+    "textLines": null
+  },
+  {
+    "path": "ShipbreakerVr/ModFiles/icon.png",
+    "bytes": 11484,
+    "sha256": "d9a8f92b3dd0294c1e42bfed71078c2b3d8aa77a3faa103080f06fd6bd8d3b08",
+    "role": "Mod branding/icon image.",
+    "textLines": null
+  },
+  {
+    "path": "ShipbreakerVr/ModFiles/manifest.json",
+    "bytes": 431,
+    "sha256": "d71ea42e1a25976d47a00896385351bed97b9e8dd44f39b7f3c765620c4987ed",
+    "role": "RaiManager game/mod identifiers and Steam/Xbox installation hints.",
+    "textLines": 19
+  },
+  {
+    "path": "ShipbreakerVr/ModXrManager.cs",
+    "bytes": 1986,
+    "sha256": "a1222a776c1e17d7223ce7276882c58db7fc35715d997b19db20d607644db90b",
+    "role": "F3; XR settings bundle; XR loader startup/shutdown; original private-state reflection.",
+    "textLines": 63,
+    "declaredTypes": [
+      "ModXrManager"
+    ]
+  },
+  {
+    "path": "ShipbreakerVr/NuGet.Config",
+    "bytes": 191,
+    "sha256": "5edb10958136f2c5d373c41c0a3b2080ab712f16ed7efc7d9986cfce535759d5",
+    "role": "Original BepInEx package feed; superseded by root configuration and vendored loader references.",
+    "textLines": 6
+  },
+  {
+    "path": "ShipbreakerVr/Patches.cs",
+    "bytes": 904,
+    "sha256": "a44e64ba3876fc3bb8324b3a15673adeb558768fb5281cd727daab9bc2b99d7a",
+    "role": "Only two Harmony postfixes: LynxCameraController.Start and CanvasScaler.OnEnable.",
+    "textLines": 34,
+    "declaredTypes": [
+      "Patches"
+    ]
+  },
+  {
+    "path": "ShipbreakerVr/ShipbreakerVr.csproj",
+    "bytes": 4811,
+    "sha256": "084cb2ce8e6040337abf5a85db5150ad438070104d253f1c97c71e138ad0b292",
+    "role": "Original net48 plugin, game/BepInEx packages, uncommitted Unity-export references, bundle copying.",
+    "textLines": 85
+  },
+  {
+    "path": "ShipbreakerVr/ShipbreakerVrMod.cs",
+    "bytes": 1269,
+    "sha256": "2eed531cedf2c0fc170cb929a245490b55edddff1bee55080d09b57dc8284ebf",
+    "role": "BepInEx entry point; Harmony registration; F5 quality and F6 lights.",
+    "textLines": 53,
+    "declaredTypes": [
+      "ShipbreakerVrMod"
+    ]
+  },
+  {
+    "path": "ShipbreakerVr/TypeExtensions.cs",
+    "bytes": 899,
+    "sha256": "988dde353d5b1abb7eb864aea97e92248be2d333ea5f1d7aefe62750a4787dd1",
+    "role": "Reflection helper searching up to two base types; formerly used for loader state.",
+    "textLines": 28,
+    "declaredTypes": [
+      "TypeExtensions"
+    ]
+  },
+  {
+    "path": "ShipbreakerVr/VrAssetManager.cs",
+    "bytes": 632,
+    "sha256": "27f7e41c1990dfb23e3d4b6302bef8ac498a92c1190bb784e46d46b172dbe10c",
+    "role": "Loads plugin-relative AssetBundles from the BepInEx plugin folder.",
+    "textLines": 23,
+    "declaredTypes": [
+      "VrAssetManager"
+    ]
+  },
+  {
+    "path": "ShipbreakerVr/VrCamera.cs",
+    "bytes": 1152,
+    "sha256": "f141f89548ffa2ee08aa86a46972580afa7d4f911f0496c1a7615f05a804ebcc",
+    "role": "Child stereo camera, copied clip/mask settings, rotation-only TrackedPoseDriver, .2m eye offset.",
+    "textLines": 34,
+    "declaredTypes": [
+      "VrCamera"
+    ]
+  },
+  {
+    "path": "ShipbreakerVr/VrUi.cs",
+    "bytes": 2047,
+    "sha256": "ffc7dc354209f50a64bda8b955dd60a1584343b2eeb8ecb912ebd87fa8143d85",
+    "role": "World-space root canvases, .001 scale, 1.5m distance, saved/restored layout and scaler toggles.",
+    "textLines": 65,
+    "declaredTypes": [
+      "VrUi"
+    ]
+  },
+  {
+    "path": "ShipbreakerVrPatcher/CopyToGame/Shipbreaker_Data/Plugins/x86_64/UnityOpenXR.dll",
+    "bytes": 581632,
+    "sha256": "de9a034e4d0e1a30c54d1d56719396f540da02284eecfbc87ed766e6e2ec2093",
+    "role": "Native OpenXR runtime provider payload.",
+    "textLines": null
+  },
+  {
+    "path": "ShipbreakerVrPatcher/CopyToGame/Shipbreaker_Data/Plugins/x86_64/openxr_loader.dll",
+    "bytes": 1860096,
+    "sha256": "21159e0c94e42ce888d62dfe3050cb444274883ee739f7f7c74792b0c0288dcc",
+    "role": "Native OpenXR runtime provider payload.",
+    "textLines": null
+  },
+  {
+    "path": "ShipbreakerVrPatcher/CopyToGame/Shipbreaker_Data/UnitySubsystems/UnityOpenXR/UnitySubsystemsManifest.json",
+    "bytes": 207,
+    "sha256": "1a62a40ba802b123543bba4ff3d80eef84d6ad5d67369a6e8b7550445244373c",
+    "role": "Unity subsystem discovery manifest (OpenXR display/input provider).",
+    "textLines": 15
+  },
+  {
+    "path": "ShipbreakerVrPatcher/Patcher.cs",
+    "bytes": 2196,
+    "sha256": "5a4a6a5c50ca05929bf0af0c5401d783371297f2c54337e12530ac929cb86c44",
+    "role": "BepInEx preload initialization copies native provider files; assembly Patch method is empty.",
+    "textLines": 65,
+    "declaredTypes": [
+      "Patcher"
+    ]
+  },
+  {
+    "path": "ShipbreakerVrPatcher/Properties/AssemblyInfo.cs",
+    "bytes": 1376,
+    "sha256": "b2fc7c1c8d05d215e3393f2e23bb64539971f1cab755aeae050186330597c4c4",
+    "role": "Patcher .NET assembly identity/version attributes.",
+    "textLines": 35,
+    "declaredTypes": []
+  },
+  {
+    "path": "ShipbreakerVrPatcher/ShipbreakerVrPatcher.csproj",
+    "bytes": 1300,
+    "sha256": "224cef2ef1b27fa76823bab724b8dffe0778dfee4e750239e92de76055ab962c",
+    "role": "Original net35 preloader, Cecil reference and CopyToGame payload.",
+    "textLines": 30
+  },
+  {
+    "path": "ShipbreakerVrUnity/.gitignore",
+    "bytes": 1284,
+    "sha256": "c735b75517ecf18563ce4bf269eb4fe158a5539f7d554823578a85eaec795f45",
+    "role": "Repository support asset; retained upstream.",
+    "textLines": 72
+  },
+  {
+    "path": "ShipbreakerVrUnity/AssetBundles/AssetBundles",
+    "bytes": 1020,
+    "sha256": "7968e63cdaa3a7e6ad693f684306833fdf1ee933fe7d80c6613606f5cf7aca52",
+    "role": "AssetBundle build manifest/hash metadata.",
+    "textLines": null
+  },
+  {
+    "path": "ShipbreakerVrUnity/AssetBundles/AssetBundles.manifest",
+    "bytes": 137,
+    "sha256": "b7c6229060b3f8e9ac187c36527893e757a406e6317a0c13b690f80020a97ba9",
+    "role": "AssetBundle build manifest/hash metadata.",
+    "textLines": 7
+  },
+  {
+    "path": "ShipbreakerVrUnity/AssetBundles/xrmanager",
+    "bytes": 3566,
+    "sha256": "dcbfdc9095c7b248b71090072a24b97101bf2b4f1ac852d59ba8892f48e81396",
+    "role": "Serialized XR settings bundle.",
+    "textLines": null
+  },
+  {
+    "path": "ShipbreakerVrUnity/AssetBundles/xrmanager.manifest",
+    "bytes": 2397,
+    "sha256": "075c1381b51fb268b32ffe70406b513f479193131a90b4e7896b1937d5d11eae",
+    "role": "AssetBundle build manifest/hash metadata.",
+    "textLines": 53
+  },
+  {
+    "path": "ShipbreakerVrUnity/Assets/AssetBundlesBrowser.meta",
+    "bytes": 172,
+    "sha256": "30c16f73840bf0e179c1b037da399b5712f5780d60b4b9a92e161153b3c73bf6",
+    "role": "Unity GUID/import metadata for AssetBundlesBrowser; preserve identity.",
+    "textLines": 8
+  },
+  {
+    "path": "ShipbreakerVrUnity/Assets/AssetBundlesBrowser/Editor.meta",
+    "bytes": 172,
+    "sha256": "f0ea20b6af63d9ff49b81a1b72392484276e7628a1f3a334903690f0a8872515",
+    "role": "Unity GUID/import metadata for Editor; preserve identity.",
+    "textLines": 8
+  },
+  {
+    "path": "ShipbreakerVrUnity/Assets/AssetBundlesBrowser/Editor/AssetBundleBrowserMain.cs",
+    "bytes": 8439,
+    "sha256": "83dff11d644bf93d846a4b9a2597fe5f90c29b57323c4b5a5462fed832a8a8cc",
+    "role": "Vendored editor only: Editor window and tabs. No in-game patches.",
+    "textLines": 251,
+    "declaredTypes": [
+      "AssetBundleBrowserMain",
+      "Mode"
+    ]
+  },
+  {
+    "path": "ShipbreakerVrUnity/Assets/AssetBundlesBrowser/Editor/AssetBundleBrowserMain.cs.meta",
+    "bytes": 243,
+    "sha256": "66910508c414737a3c0b88779c9f4e01d61b8c984012e129f6c5930f6f9ccf08",
+    "role": "Unity GUID/import metadata for AssetBundleBrowserMain.cs; preserve identity.",
+    "textLines": 11
+  },
+  {
+    "path": "ShipbreakerVrUnity/Assets/AssetBundlesBrowser/Editor/AssetBundleBuildTab.cs",
+    "bytes": 18778,
+    "sha256": "f33ffb334ec0d6e1c94d23778a65a6789c52b8ba834fbbe5f2bb4e2e1a972a53",
+    "role": "Vendored editor only: Interactive bundle build UI. No in-game patches.",
+    "textLines": 461,
+    "declaredTypes": [
+      "AssetBundleBuildTab",
+      "ToggleData",
+      "CompressOptions",
+      "with",
+      "ValidBuildTarget",
+      "BuildTabData"
+    ]
+  },
+  {
+    "path": "ShipbreakerVrUnity/Assets/AssetBundlesBrowser/Editor/AssetBundleBuildTab.cs.meta",
+    "bytes": 243,
+    "sha256": "6a231e19a337558ad804631b8f9c29b7e5f080469d0ff5090a2ff30c58348c5f",
+    "role": "Unity GUID/import metadata for AssetBundleBuildTab.cs; preserve identity.",
+    "textLines": 11
+  },
+  {
+    "path": "ShipbreakerVrUnity/Assets/AssetBundlesBrowser/Editor/AssetBundleDataSource.meta",
+    "bytes": 191,
+    "sha256": "cdfcbd9e1640a4da4829358daf363e2b25b98ccf956af55af33631e7a0ab8340",
+    "role": "Unity GUID/import metadata for AssetBundleDataSource; preserve identity.",
+    "textLines": 9
+  },
+  {
+    "path": "ShipbreakerVrUnity/Assets/AssetBundlesBrowser/Editor/AssetBundleDataSource/ABDataSource.cs",
+    "bytes": 4862,
+    "sha256": "a643bcdab30d35d8e5bd81fca66a8ba982b0bb39305ef4633809313db613874e",
+    "role": "Vendored editor only: Data-source contract. No in-game patches.",
+    "textLines": 126,
+    "declaredTypes": [
+      "used",
+      "ABBuildInfo",
+      "used",
+      "deriving",
+      "AND",
+      "ABDataSource",
+      "in",
+      "will"
+    ]
+  },
+  {
+    "path": "ShipbreakerVrUnity/Assets/AssetBundlesBrowser/Editor/AssetBundleDataSource/ABDataSource.cs.meta",
+    "bytes": 243,
+    "sha256": "1053538a346ea6010720f58ecc1d8a733138e3093900bf02850dd5d4c308b4ca",
+    "role": "Unity GUID/import metadata for ABDataSource.cs; preserve identity.",
+    "textLines": 11
+  },
+  {
+    "path": "ShipbreakerVrUnity/Assets/AssetBundlesBrowser/Editor/AssetBundleDataSource/ABDataSourceProvider.cs",
+    "bytes": 1724,
+    "sha256": "744b42718f812141efa871114775cb9f7c8fa2a649a31bfb140c409270ce28f5",
+    "role": "Vendored editor only: Data-source discovery. No in-game patches.",
+    "textLines": 55,
+    "declaredTypes": [
+      "ABDataSourceProviderUtility"
+    ]
+  },
+  {
+    "path": "ShipbreakerVrUnity/Assets/AssetBundlesBrowser/Editor/AssetBundleDataSource/ABDataSourceProvider.cs.meta",
+    "bytes": 243,
+    "sha256": "ce5637036c8af84357ac1108bbcc1c2f6ab210436b0b891b263e1696704872a0",
+    "role": "Unity GUID/import metadata for ABDataSourceProvider.cs; preserve identity.",
+    "textLines": 11
+  },
+  {
+    "path": "ShipbreakerVrUnity/Assets/AssetBundlesBrowser/Editor/AssetBundleDataSource/AssetDatabaseABDataSource.cs",
+    "bytes": 3090,
+    "sha256": "1eff816859addb271caf0a4898d6533caa031c57eb1ba6f7f1a7e582a9bc8297",
+    "role": "Vendored editor only: Unity AssetDatabase adapter. No in-game patches.",
+    "textLines": 104,
+    "declaredTypes": [
+      "AssetDatabaseABDataSource"
+    ]
+  },
+  {
+    "path": "ShipbreakerVrUnity/Assets/AssetBundlesBrowser/Editor/AssetBundleDataSource/AssetDatabaseABDataSource.cs.meta",
+    "bytes": 243,
+    "sha256": "acbb24b83eb707f8e7b47ecddbf53276be67f03ae5fae16eabedb9fce0abd5e1",
+    "role": "Unity GUID/import metadata for AssetDatabaseABDataSource.cs; preserve identity.",
+    "textLines": 11
+  },
+  {
+    "path": "ShipbreakerVrUnity/Assets/AssetBundlesBrowser/Editor/AssetBundleManageTab.cs",
+    "bytes": 11054,
+    "sha256": "b6e1900cd95404bc0b2786154b26560db43091f8da279c8f2783cf71ed4c8fec",
+    "role": "Vendored editor only: Interactive bundle assignment UI. No in-game patches.",
+    "textLines": 277,
+    "declaredTypes": [
+      "AssetBundleManageTab"
+    ]
+  },
+  {
+    "path": "ShipbreakerVrUnity/Assets/AssetBundlesBrowser/Editor/AssetBundleManageTab.cs.meta",
+    "bytes": 243,
+    "sha256": "3df893da7c55b7ace24857ff3a5b8dfce55f6cfeaddba5ce3497733d74b4db0f",
+    "role": "Unity GUID/import metadata for AssetBundleManageTab.cs; preserve identity.",
+    "textLines": 11
+  },
+  {
+    "path": "ShipbreakerVrUnity/Assets/AssetBundlesBrowser/Editor/AssetBundleModel.meta",
+    "bytes": 191,
+    "sha256": "d1acfc52a05b0049f3c096f62c43be2a9f32a54395a332cdc4f5a6e110d47e71",
+    "role": "Unity GUID/import metadata for AssetBundleModel; preserve identity.",
+    "textLines": 9
+  },
+  {
+    "path": "ShipbreakerVrUnity/Assets/AssetBundlesBrowser/Editor/AssetBundleModel/ABModel.cs",
+    "bytes": 31729,
+    "sha256": "7ff3d5f8a6f00f027239fb8ef6c7cfcca76e874958927e2ce8d81fb433de4e4a",
+    "role": "Vendored editor only: Bundle browser model. No in-game patches.",
+    "textLines": 797,
+    "declaredTypes": [
+      "holding",
+      "Model",
+      "ABMoveData",
+      "AssetBundleChangeListener"
+    ]
+  },
+  {
+    "path": "ShipbreakerVrUnity/Assets/AssetBundlesBrowser/Editor/AssetBundleModel/ABModel.cs.meta",
+    "bytes": 243,
+    "sha256": "7909271e9ad6d5b7d777eebffe6515110a39e3ce4f953cd07cf4d5fed5a12b8a",
+    "role": "Unity GUID/import metadata for ABModel.cs; preserve identity.",
+    "textLines": 11
+  },
+  {
+    "path": "ShipbreakerVrUnity/Assets/AssetBundlesBrowser/Editor/AssetBundleModel/ABModelAssetInfo.cs",
+    "bytes": 9073,
+    "sha256": "615d5fba0bc0c4fe6c68b36d9b2ae8c3dfe0bbc047310e21ee11230a074739c4",
+    "role": "Vendored editor only: Per-asset dependency model. No in-game patches.",
+    "textLines": 246,
+    "declaredTypes": [
+      "AssetTreeItem",
+      "AssetInfo"
+    ]
+  },
+  {
+    "path": "ShipbreakerVrUnity/Assets/AssetBundlesBrowser/Editor/AssetBundleModel/ABModelAssetInfo.cs.meta",
+    "bytes": 243,
+    "sha256": "c52df84d89edacd8d84d112cbb0d049e590d323bf8511c76e5f312661ab89543",
+    "role": "Unity GUID/import metadata for ABModelAssetInfo.cs; preserve identity.",
+    "textLines": 11
+  },
+  {
+    "path": "ShipbreakerVrUnity/Assets/AssetBundlesBrowser/Editor/AssetBundleModel/ABModelBundleInfo.cs",
+    "bytes": 36927,
+    "sha256": "4ba8d57b4a88d7f404be758e02991772d58b2d927272eb5f19a6c7ece3feb66c",
+    "role": "Vendored editor only: Per-bundle model. No in-game patches.",
+    "textLines": 1042,
+    "declaredTypes": [
+      "BundleTreeItem",
+      "BundleNameData",
+      "BundleInfo",
+      "BundleDependencyInfo",
+      "BundleDataInfo",
+      "BundleVariantDataInfo",
+      "BundleFolderInfo",
+      "BundleFolderConcreteInfo",
+      "BundleVariantFolderInfo"
+    ]
+  },
+  {
+    "path": "ShipbreakerVrUnity/Assets/AssetBundlesBrowser/Editor/AssetBundleModel/ABModelBundleInfo.cs.meta",
+    "bytes": 243,
+    "sha256": "84b532a5724990a905afaada9b6b29bafad1c68e30c4cecfe0263a5479b32e7a",
+    "role": "Unity GUID/import metadata for ABModelBundleInfo.cs; preserve identity.",
+    "textLines": 11
+  },
+  {
+    "path": "ShipbreakerVrUnity/Assets/AssetBundlesBrowser/Editor/AssetBundleTree.cs",
+    "bytes": 26550,
+    "sha256": "4a8ca3558f55ea702945d47adf2ae020320910e1e2687b9412edab1dfb3bd883",
+    "role": "Vendored editor only: Bundle tree view. No in-game patches.",
+    "textLines": 647,
+    "declaredTypes": [
+      "AssetBundleTree",
+      "DragAndDropData"
+    ]
+  },
+  {
+    "path": "ShipbreakerVrUnity/Assets/AssetBundlesBrowser/Editor/AssetBundleTree.cs.meta",
+    "bytes": 243,
+    "sha256": "9e37c9fdf2096b56d4923efb7cfe2ee1783ceca31028afa034cbc9c2ccd945b2",
+    "role": "Unity GUID/import metadata for AssetBundleTree.cs; preserve identity.",
+    "textLines": 11
+  },
+  {
+    "path": "ShipbreakerVrUnity/Assets/AssetBundlesBrowser/Editor/AssetListTree.cs",
+    "bytes": 17387,
+    "sha256": "0c19d0982758615f783451e1b8afe4faff7f2648218cf60483ddd171e5973391",
+    "role": "Vendored editor only: Asset list view. No in-game patches.",
+    "textLines": 475,
+    "declaredTypes": [
+      "AssetListTree",
+      "MyColumns",
+      "SortOption",
+      "MyExtensionMethods"
+    ]
+  },
+  {
+    "path": "ShipbreakerVrUnity/Assets/AssetBundlesBrowser/Editor/AssetListTree.cs.meta",
+    "bytes": 243,
+    "sha256": "d638d27905f1673d515b5570e94e174adbd541a7c3730aeee1614f726595b3e5",
+    "role": "Unity GUID/import metadata for AssetListTree.cs; preserve identity.",
+    "textLines": 11
+  },
+  {
+    "path": "ShipbreakerVrUnity/Assets/AssetBundlesBrowser/Editor/BundleDetailList.cs",
+    "bytes": 11579,
+    "sha256": "6bff7ea37b3dc39e5c28362edd9fe4456c13d6b5295087a5356b0b6bdcad6be5",
+    "role": "Vendored editor only: Bundle details view. No in-game patches.",
+    "textLines": 321,
+    "declaredTypes": [
+      "BundleDetailItem",
+      "TogglePathTreeViewItem",
+      "BundleDetailList"
+    ]
+  },
+  {
+    "path": "ShipbreakerVrUnity/Assets/AssetBundlesBrowser/Editor/BundleDetailList.cs.meta",
+    "bytes": 243,
+    "sha256": "5b516df799c1fc287e081c9ec1e5809234ca272913f28a919fa3150488d8d02d",
+    "role": "Unity GUID/import metadata for BundleDetailList.cs; preserve identity.",
+    "textLines": 11
+  },
+  {
+    "path": "ShipbreakerVrUnity/Assets/AssetBundlesBrowser/Editor/Icons.meta",
+    "bytes": 191,
+    "sha256": "2fe301b5e9f76fe5b495c284a21c95414791b1dfd01657ed315e804c28015af8",
+    "role": "Unity GUID/import metadata for Icons; preserve identity.",
+    "textLines": 9
+  },
+  {
+    "path": "ShipbreakerVrUnity/Assets/AssetBundlesBrowser/Editor/Icons/ABundleBrowserIconY1756Basic.png",
+    "bytes": 1499,
+    "sha256": "7db3b59a193db9ff7cc6a2853748807b60b5062622af17fb8b2fd65a91aa7344",
+    "role": "Vendored AssetBundle Browser editor icon/resource.",
+    "textLines": null
+  },
+  {
+    "path": "ShipbreakerVrUnity/Assets/AssetBundlesBrowser/Editor/Icons/ABundleBrowserIconY1756Basic.png.meta",
+    "bytes": 1701,
+    "sha256": "7d0d5682c32dc2938c0f955a500d022f11ca04dd437f83d270490db40d1dd174",
+    "role": "Unity GUID/import metadata for ABundleBrowserIconY1756Basic.png; preserve identity.",
+    "textLines": 77
+  },
+  {
+    "path": "ShipbreakerVrUnity/Assets/AssetBundlesBrowser/Editor/Icons/ABundleBrowserIconY1756Scene.png",
+    "bytes": 1617,
+    "sha256": "3c4a3c77c7e46f620b9d99df82e854651ec57c5d47adfcc67f93498193adb4f5",
+    "role": "Vendored AssetBundle Browser editor icon/resource.",
+    "textLines": null
+  },
+  {
+    "path": "ShipbreakerVrUnity/Assets/AssetBundlesBrowser/Editor/Icons/ABundleBrowserIconY1756Scene.png.meta",
+    "bytes": 1701,
+    "sha256": "697e344ad20a1c226c8f5acbe4ceff66ef07010ebc071ffd64c82dad5049dc7d",
+    "role": "Unity GUID/import metadata for ABundleBrowserIconY1756Scene.png; preserve identity.",
+    "textLines": 77
+  },
+  {
+    "path": "ShipbreakerVrUnity/Assets/AssetBundlesBrowser/Editor/InspectTab.meta",
+    "bytes": 191,
+    "sha256": "cfbe4c0b5f1d63a41ea78f9f012484763d3937f8e632fa4a58fbd6eec8dbf153",
+    "role": "Unity GUID/import metadata for InspectTab; preserve identity.",
+    "textLines": 9
+  },
+  {
+    "path": "ShipbreakerVrUnity/Assets/AssetBundlesBrowser/Editor/InspectTab/AssetBundleInspectTab.cs",
+    "bytes": 17172,
+    "sha256": "f1f329424171969f2812b3bd0be56f822391366266a27c48a38a2925f365af9e",
+    "role": "Vendored editor only: Bundle inspection UI. No in-game patches.",
+    "textLines": 514,
+    "declaredTypes": [
+      "AssetBundleInspectTab",
+      "InspectTabData",
+      "BundleFolderData"
+    ]
+  },
+  {
+    "path": "ShipbreakerVrUnity/Assets/AssetBundlesBrowser/Editor/InspectTab/AssetBundleInspectTab.cs.meta",
+    "bytes": 243,
+    "sha256": "c6fddcdec5ddfd98989348c1b841b58808c77f6221e56876499da62ba32eb16b",
+    "role": "Unity GUID/import metadata for AssetBundleInspectTab.cs; preserve identity.",
+    "textLines": 11
+  },
+  {
+    "path": "ShipbreakerVrUnity/Assets/AssetBundlesBrowser/Editor/InspectTab/AssetBundleRecord.cs",
+    "bytes": 1755,
+    "sha256": "bcffdf8ab210a010c0b19fd6d9be82e6cb7e84f8411ae71ef94f68ceed547d1a",
+    "role": "Vendored editor only: Inspection record persistence. No in-game patches.",
+    "textLines": 60,
+    "declaredTypes": [
+      "maintains",
+      "AssetBundleRecord"
+    ]
+  },
+  {
+    "path": "ShipbreakerVrUnity/Assets/AssetBundlesBrowser/Editor/InspectTab/AssetBundleRecord.cs.meta",
+    "bytes": 243,
+    "sha256": "b4b327315e8d53c903f15a15411228c17cb45446cbd0100cdb6a5a27a1eb59f8",
+    "role": "Unity GUID/import metadata for AssetBundleRecord.cs; preserve identity.",
+    "textLines": 11
+  },
+  {
+    "path": "ShipbreakerVrUnity/Assets/AssetBundlesBrowser/Editor/InspectTab/InspectSingleBundle.cs",
+    "bytes": 4591,
+    "sha256": "9829ccbdbc7d704493ae7cec76de30dfa2ddd4be78fcb6825a731170dc2c6e29",
+    "role": "Vendored editor only: Single bundle inspection. No in-game patches.",
+    "textLines": 129,
+    "declaredTypes": [
+      "SingleBundleInspector",
+      "AssetBundleEditor"
+    ]
+  },
+  {
+    "path": "ShipbreakerVrUnity/Assets/AssetBundlesBrowser/Editor/InspectTab/InspectSingleBundle.cs.meta",
+    "bytes": 243,
+    "sha256": "043aa2448978a1284a8c3d8d4afea969fa2f92bc751ed81b68fdc0f130e4170b",
+    "role": "Unity GUID/import metadata for InspectSingleBundle.cs; preserve identity.",
+    "textLines": 11
+  },
+  {
+    "path": "ShipbreakerVrUnity/Assets/AssetBundlesBrowser/Editor/InspectTab/InspectTreeView.cs",
+    "bytes": 4447,
+    "sha256": "900c54e266e2c1d44d54a6167f3f0c63e5ee9f9a50251f01ac356d6bf5d732ff",
+    "role": "Vendored editor only: Inspector tree UI. No in-game patches.",
+    "textLines": 137,
+    "declaredTypes": [
+      "InspectTreeItem",
+      "InspectBundleTree"
+    ]
+  },
+  {
+    "path": "ShipbreakerVrUnity/Assets/AssetBundlesBrowser/Editor/InspectTab/InspectTreeView.cs.meta",
+    "bytes": 243,
+    "sha256": "250755cfcfe57bd30edfb5c6582b40fc55b54677ddafff11282a545f8af64376",
+    "role": "Unity GUID/import metadata for InspectTreeView.cs; preserve identity.",
+    "textLines": 11
+  },
+  {
+    "path": "ShipbreakerVrUnity/Assets/AssetBundlesBrowser/Editor/MessageList.cs",
+    "bytes": 4170,
+    "sha256": "85fc25ca400f60c7ea7b60794f8ab318d3fc3c9dae27c1127c90b13b488a03d8",
+    "role": "Vendored editor only: Editor message list. No in-game patches.",
+    "textLines": 116,
+    "declaredTypes": [
+      "MessageList"
+    ]
+  },
+  {
+    "path": "ShipbreakerVrUnity/Assets/AssetBundlesBrowser/Editor/MessageList.cs.meta",
+    "bytes": 243,
+    "sha256": "691af2d6712c308a19ed81b62204b95f02cedfc7711f3798700c4a8dd16da9c9",
+    "role": "Unity GUID/import metadata for MessageList.cs; preserve identity.",
+    "textLines": 11
+  },
+  {
+    "path": "ShipbreakerVrUnity/Assets/AssetBundlesBrowser/Editor/MessageSystem.cs",
+    "bytes": 7747,
+    "sha256": "bf72351bdde1747dd4c08ae9e38187eed4c716427975ac503ed641755b60324b",
+    "role": "Vendored editor only: Editor message severity/types. No in-game patches.",
+    "textLines": 198,
+    "declaredTypes": [
+      "MessageSystem",
+      "MessageFlag",
+      "MessageState",
+      "and",
+      "has",
+      "Message"
+    ]
+  },
+  {
+    "path": "ShipbreakerVrUnity/Assets/AssetBundlesBrowser/Editor/MessageSystem.cs.meta",
+    "bytes": 243,
+    "sha256": "72e13cb85a8d5c3d1daf66e491693b719e21d02232ff26185eed08a9119cd270",
+    "role": "Unity GUID/import metadata for MessageSystem.cs; preserve identity.",
+    "textLines": 11
+  },
+  {
+    "path": "ShipbreakerVrUnity/Assets/AssetBundlesBrowser/Editor/Unity.AssetBundleBrowser.Editor.asmdef",
+    "bytes": 155,
+    "sha256": "13ffcd03d580f001fe10b75b4c2f0e7373665185aa4c495bd6ca5de2d716e934",
+    "role": "Editor-only assembly boundary for vendored AssetBundle Browser.",
+    "textLines": 9
+  },
+  {
+    "path": "ShipbreakerVrUnity/Assets/AssetBundlesBrowser/Editor/Unity.AssetBundleBrowser.Editor.asmdef.meta",
+    "bytes": 166,
+    "sha256": "e046861ee95c967b9c02c73f15df6bdb01cba00e0e9dc06b18a04156b85cf607",
+    "role": "Unity GUID/import metadata for Unity.AssetBundleBrowser.Editor.asmdef; preserve identity.",
+    "textLines": 7
+  },
+  {
+    "path": "ShipbreakerVrUnity/Assets/HDRPDefaultResources.meta",
+    "bytes": 172,
+    "sha256": "947f00800ba168fdd2e94d22d35e2b7f2d0d59d236df26339077db7156025ea7",
+    "role": "Unity GUID/import metadata for HDRPDefaultResources; preserve identity.",
+    "textLines": 8
+  },
+  {
+    "path": "ShipbreakerVrUnity/Assets/HDRPDefaultResources/DefaultHDRISky.exr",
+    "bytes": 188717,
+    "sha256": "d96647a6ccd2481ef10e55a558f37445cf201d08ebf2407871bfda16ce6400f5",
+    "role": "Dependency-project HDRP default render asset/resource; not a game HUD or tool adapter.",
+    "textLines": null
+  },
+  {
+    "path": "ShipbreakerVrUnity/Assets/HDRPDefaultResources/DefaultHDRISky.exr.meta",
+    "bytes": 2416,
+    "sha256": "5e965b3dbabaf16d883367a1801ddfe5f26f2c793c60ca74c0e76c0b7a78376d",
+    "role": "Unity GUID/import metadata for DefaultHDRISky.exr; preserve identity.",
+    "textLines": 106
+  },
+  {
+    "path": "ShipbreakerVrUnity/Assets/HDRPDefaultResources/DefaultHDRPAsset.asset",
+    "bytes": 12952,
+    "sha256": "a801a5a0504943655f98688aa7f016893ee83efe5c1c484e1f94d417d60ad7b7",
+    "role": "Dependency-project HDRP default render asset/resource; not a game HUD or tool adapter.",
+    "textLines": 451
+  },
+  {
+    "path": "ShipbreakerVrUnity/Assets/HDRPDefaultResources/DefaultHDRPAsset.asset.meta",
+    "bytes": 182,
+    "sha256": "854b0bfa6d780072de6c064260b41259f0e1ff544a9a04a167de7722ae967139",
+    "role": "Unity GUID/import metadata for DefaultHDRPAsset.asset; preserve identity.",
+    "textLines": 8
+  },
+  {
+    "path": "ShipbreakerVrUnity/Assets/HDRPDefaultResources/DefaultSceneRoot.prefab",
+    "bytes": 13579,
+    "sha256": "bdc6c9b296ba2126ac706d3d178b7bf64e10ec205b4c52694c01313ad4a667a2",
+    "role": "Dependency-project HDRP default render asset/resource; not a game HUD or tool adapter.",
+    "textLines": 516
+  },
+  {
+    "path": "ShipbreakerVrUnity/Assets/HDRPDefaultResources/DefaultSceneRoot.prefab.meta",
+    "bytes": 154,
+    "sha256": "b30325a73a4e440be2d41e7d134682d56f408ac7eace5b09f2c0b7f5fc54c4f1",
+    "role": "Unity GUID/import metadata for DefaultSceneRoot.prefab; preserve identity.",
+    "textLines": 7
+  },
+  {
+    "path": "ShipbreakerVrUnity/Assets/HDRPDefaultResources/DefaultVFXResources.asset",
+    "bytes": 2680,
+    "sha256": "0f06f5b920661b7eb323f985cf09ecaf8398dc06285755f3db3d5ff220f5ee42",
+    "role": "Dependency-project HDRP default render asset/resource; not a game HUD or tool adapter.",
+    "textLines": 112
+  },
+  {
+    "path": "ShipbreakerVrUnity/Assets/HDRPDefaultResources/DefaultVFXResources.asset.meta",
+    "bytes": 182,
+    "sha256": "3f4598483014aa33c865a41039a5cd2bdf297d8b8455aafe38d623530eb88740",
+    "role": "Unity GUID/import metadata for DefaultVFXResources.asset; preserve identity.",
+    "textLines": 8
+  },
+  {
+    "path": "ShipbreakerVrUnity/Assets/Scene.unity",
+    "bytes": 19694,
+    "sha256": "a27fcf7ac6d40cdf1ef47e8712660615e6895405efcf1ee3699e9b3db2929ccc",
+    "role": "Dependency-export Unity scene; not a Shipbreaker game scene.",
+    "textLines": 749
+  },
+  {
+    "path": "ShipbreakerVrUnity/Assets/Scene.unity.meta",
+    "bytes": 155,
+    "sha256": "01f241d56541828eaf912b387a342c7c84db442ddd4609df13f36cee9a60ed71",
+    "role": "Unity GUID/import metadata for Scene.unity; preserve identity.",
+    "textLines": 7
+  },
+  {
+    "path": "ShipbreakerVrUnity/Assets/XR.meta",
+    "bytes": 172,
+    "sha256": "f8fddc78d0542f1b8b3bea823c061ba2a14bdeb884f383a14a53978b6612ba6c",
+    "role": "Unity GUID/import metadata for XR; preserve identity.",
+    "textLines": 8
+  },
+  {
+    "path": "ShipbreakerVrUnity/Assets/XR/Loaders.meta",
+    "bytes": 172,
+    "sha256": "4ac296bdcd324e7d5e2a8d249da737e794a96ddb72dde9105d0c80755b9f4d9b",
+    "role": "Unity GUID/import metadata for Loaders; preserve identity.",
+    "textLines": 8
+  },
+  {
+    "path": "ShipbreakerVrUnity/Assets/XR/Loaders/Open XR Loader No Pre Init.asset",
+    "bytes": 415,
+    "sha256": "ce5966021aeffbf2fbdfd75b1f7c7981e9d2d02a6cb2731c8611197b3ec7ff27",
+    "role": "Serialized alternate no-pre-init OpenXR loader asset.",
+    "textLines": 14
+  },
+  {
+    "path": "ShipbreakerVrUnity/Assets/XR/Loaders/Open XR Loader No Pre Init.asset.meta",
+    "bytes": 198,
+    "sha256": "d416ed9515ca982c76693ccdffa4517bfa3ee01d2663421fabf37b9ed4860755",
+    "role": "Unity GUID/import metadata for Open XR Loader No Pre Init.asset; preserve identity.",
+    "textLines": 8
+  },
+  {
+    "path": "ShipbreakerVrUnity/Assets/XR/Loaders/Open XR Loader.asset",
+    "bytes": 403,
+    "sha256": "7287285f4b05cd2dbe5a06b1e524348eddcda008be790757918c7257972bccfd",
+    "role": "Serialized OpenXR loader asset.",
+    "textLines": 14
+  },
+  {
+    "path": "ShipbreakerVrUnity/Assets/XR/Loaders/Open XR Loader.asset.meta",
+    "bytes": 198,
+    "sha256": "f0e3604a5d39377602870f164d45630085ae50bae2e48d9bd84c63c5a7538e95",
+    "role": "Unity GUID/import metadata for Open XR Loader.asset; preserve identity.",
+    "textLines": 8
+  },
+  {
+    "path": "ShipbreakerVrUnity/Assets/XR/Settings.meta",
+    "bytes": 172,
+    "sha256": "793438d753f8a0776850c3d6e98c5e2cf6d1b8eda52959f10faa1dca6b277f1f",
+    "role": "Unity GUID/import metadata for Settings; preserve identity.",
+    "textLines": 8
+  },
+  {
+    "path": "ShipbreakerVrUnity/Assets/XR/Settings/Open XR Package Settings.asset",
+    "bytes": 8039,
+    "sha256": "0a1deddf251746aec482451e4452051bc1ee152a6847f3450a2df6b59a6aed51",
+    "role": "OpenXR feature subassets; Touch on, other standard controllers off upstream; render mode 0.",
+    "textLines": 266
+  },
+  {
+    "path": "ShipbreakerVrUnity/Assets/XR/Settings/Open XR Package Settings.asset.meta",
+    "bytes": 198,
+    "sha256": "1e26e2d9d20e4371f5db7a0609ee61091034623ac985dd4a9214f205a00d09f1",
+    "role": "Unity GUID/import metadata for Open XR Package Settings.asset; preserve identity.",
+    "textLines": 8
+  },
+  {
+    "path": "ShipbreakerVrUnity/Assets/XR/Settings/OpenXR Editor Settings.asset",
+    "bytes": 433,
+    "sha256": "bb8817bd819c78f6cf913a769d809edb6ebfc7ab96b1048d5062c2243f81db27",
+    "role": "Editor-side OpenXR configuration included in xrmanager bundle.",
+    "textLines": 16
+  },
+  {
+    "path": "ShipbreakerVrUnity/Assets/XR/Settings/OpenXR Editor Settings.asset.meta",
+    "bytes": 198,
+    "sha256": "07339a7371a6b861e8aace22edc7895b0d05b940b117fab2e590959a164bedd9",
+    "role": "Unity GUID/import metadata for OpenXR Editor Settings.asset; preserve identity.",
+    "textLines": 8
+  },
+  {
+    "path": "ShipbreakerVrUnity/Assets/XR/XRGeneralSettings.asset",
+    "bytes": 1470,
+    "sha256": "6ccc136196fe7d9b7c4b1cc2b5c8b2873c832cc074493b0d2402b6f99a0db320",
+    "role": "Standalone XRGeneralSettings, manager and serialized OpenXR loader list.",
+    "textLines": 48
+  },
+  {
+    "path": "ShipbreakerVrUnity/Assets/XR/XRGeneralSettings.asset.meta",
+    "bytes": 198,
+    "sha256": "8c69c07afc6661ae2ce817f212156f7d1bdbf2b44231d6a9c62327f8898fc171",
+    "role": "Unity GUID/import metadata for XRGeneralSettings.asset; preserve identity.",
+    "textLines": 8
+  },
+  {
+    "path": "ShipbreakerVrUnity/Packages/manifest.json",
+    "bytes": 1933,
+    "sha256": "8b1a030fd5618be98f1a09859913d0772b149393536151618a6ca1f381c2c58b",
+    "role": "Direct Unity package pins, including OpenXR 1.2.8/Input System 1.0.2/HDRP 10.6.0.",
+    "textLines": 48
+  },
+  {
+    "path": "ShipbreakerVrUnity/Packages/packages-lock.json",
+    "bytes": 12303,
+    "sha256": "52a99a63be6d7573a8eaef048526412a709b6b9dc45f1b7d00a1fcb86900e124",
+    "role": "Resolved transitive package versions, sources and dependency graph.",
+    "textLines": 459
+  },
+  {
+    "path": "ShipbreakerVrUnity/ProjectSettings/AudioManager.asset",
+    "bytes": 413,
+    "sha256": "aeedeb3243f07b61dbbe854aa08b5ef6f0b5274dd9852ad9f6129dde3e105a31",
+    "role": "Unity project settings: AudioManager. Retained without an engine upgrade.",
+    "textLines": 19
+  },
+  {
+    "path": "ShipbreakerVrUnity/ProjectSettings/ClusterInputManager.asset",
+    "bytes": 114,
+    "sha256": "40e65dd214bf254955d2c8829ca8ce2130fd3510485560ce012e9a1ddd93e623",
+    "role": "Unity project settings: ClusterInputManager. Retained without an engine upgrade.",
+    "textLines": 6
+  },
+  {
+    "path": "ShipbreakerVrUnity/ProjectSettings/DynamicsManager.asset",
+    "bytes": 1075,
+    "sha256": "390657b965287e594661b07203a992f2f1dd1ccadc76a205c772f11116e97e5e",
+    "role": "Unity project settings: DynamicsManager. Retained without an engine upgrade.",
+    "textLines": 30
+  },
+  {
+    "path": "ShipbreakerVrUnity/ProjectSettings/EditorBuildSettings.asset",
+    "bytes": 537,
+    "sha256": "dce8b133e2e58c10fcc8a64ae286d2531967cce47f1d139ae7a4801f927dd355",
+    "role": "Unity project settings: EditorBuildSettings. Retained without an engine upgrade.",
+    "textLines": 14
+  },
+  {
+    "path": "ShipbreakerVrUnity/ProjectSettings/EditorSettings.asset",
+    "bytes": 1167,
+    "sha256": "89ae994d7be2f63e4c95937af32b06d985a5171474558ba7230ee5996d685c80",
+    "role": "Unity project settings: EditorSettings. Retained without an engine upgrade.",
+    "textLines": 37
+  },
+  {
+    "path": "ShipbreakerVrUnity/ProjectSettings/GraphicsSettings.asset",
+    "bytes": 4277,
+    "sha256": "c7787d78edab1422e92669d02c77bf71d3553aa01a6ea745c74bc3f21d55b8f2",
+    "role": "Unity project settings: GraphicsSettings. Retained without an engine upgrade.",
+    "textLines": 134
+  },
+  {
+    "path": "ShipbreakerVrUnity/ProjectSettings/HDRPProjectSettings.asset",
+    "bytes": 654,
+    "sha256": "8e294bff5bb5aa74f064a5df0fc03dc2c6d4cee46439c2c85bd1843fd050698b",
+    "role": "Unity project settings: HDRPProjectSettings. Retained without an engine upgrade.",
+    "textLines": 22
+  },
+  {
+    "path": "ShipbreakerVrUnity/ProjectSettings/InputManager.asset",
+    "bytes": 9731,
+    "sha256": "1decafae25223dfc0669fcf5837682f2f303499df59d348ce7e783b46d168d16",
+    "role": "Unity project settings: InputManager. Retained without an engine upgrade.",
+    "textLines": 487
+  },
+  {
+    "path": "ShipbreakerVrUnity/ProjectSettings/NavMeshAreas.asset",
+    "bytes": 1308,
+    "sha256": "80106cfa7e6181a1928b142c075f3e510d527441e3d79bc83590e4ac91e7cd66",
+    "role": "Unity project settings: NavMeshAreas. Retained without an engine upgrade.",
+    "textLines": 91
+  },
+  {
+    "path": "ShipbreakerVrUnity/ProjectSettings/NetworkManager.asset",
+    "bytes": 151,
+    "sha256": "46395def99a6b5ae38ebb19b3e18f75215a9d4172c219361521a5a51e051f386",
+    "role": "Unity project settings: NetworkManager. Retained without an engine upgrade.",
+    "textLines": 8
+  },
+  {
+    "path": "ShipbreakerVrUnity/ProjectSettings/PackageManagerSettings.asset",
+    "bytes": 1053,
+    "sha256": "3a8aaa11f46192f28fca432156c1f870616bb23e9209e718957a9fc6b2489735",
+    "role": "Unity project settings: PackageManagerSettings. Retained without an engine upgrade.",
+    "textLines": 45
+  },
+  {
+    "path": "ShipbreakerVrUnity/ProjectSettings/Physics2DSettings.asset",
+    "bytes": 2028,
+    "sha256": "50e61d70bc38c632cb0e6efe364a9c5bcfd9a8dbcf4e7b5ecfb06a2030c4518f",
+    "role": "Unity project settings: Physics2DSettings. Retained without an engine upgrade.",
+    "textLines": 56
+  },
+  {
+    "path": "ShipbreakerVrUnity/ProjectSettings/PresetManager.asset",
+    "bytes": 344,
+    "sha256": "8102b0722a5a01773912492afba3c47dc28ba9c3eff45e54f6ac13c0fdc0e771",
+    "role": "Unity project settings: PresetManager. Retained without an engine upgrade.",
+    "textLines": 13
+  },
+  {
+    "path": "ShipbreakerVrUnity/ProjectSettings/ProjectSettings.asset",
+    "bytes": 20309,
+    "sha256": "5b5bbf256e5e64ce941b3348738d6d7930d1551ffa106394b42cccbc69affd08",
+    "role": "Player build/API/platform settings; new Input System selected in dependency project.",
+    "textLines": 705
+  },
+  {
+    "path": "ShipbreakerVrUnity/ProjectSettings/ProjectVersion.txt",
+    "bytes": 85,
+    "sha256": "70bd51407f0514072ffba7f59d8a9cfad22f5d7dc2d36fafd5c7a0e1adc27ad9",
+    "role": "Pinned Unity editor 2020.3.17f1 / a4537701e4ab.",
+    "textLines": 2
+  },
+  {
+    "path": "ShipbreakerVrUnity/ProjectSettings/QualitySettings.asset",
+    "bytes": 3589,
+    "sha256": "3b99bf595aa06224529343e84a467a66d6d955d3e16a5cba130c65dcb77b0394",
+    "role": "Unity project settings: QualitySettings. Retained without an engine upgrade.",
+    "textLines": 121
+  },
+  {
+    "path": "ShipbreakerVrUnity/ProjectSettings/TagManager.asset",
+    "bytes": 409,
+    "sha256": "50d6908a9baec0520ed7aad4fbc1034d68f2a6add9cd83f125efdcdcbb481575",
+    "role": "Unity project settings: TagManager. Retained without an engine upgrade.",
+    "textLines": 43
+  },
+  {
+    "path": "ShipbreakerVrUnity/ProjectSettings/TimeManager.asset",
+    "bytes": 195,
+    "sha256": "189be5677190854c2847f2269152d0e3c5fe7711cd9f73137ff1bbd0d1c60bac",
+    "role": "Unity project settings: TimeManager. Retained without an engine upgrade.",
+    "textLines": 9
+  },
+  {
+    "path": "ShipbreakerVrUnity/ProjectSettings/TimelineSettings.asset",
+    "bytes": 411,
+    "sha256": "4333bb60f63529ab4ad88b65fe5dfaf7af05a7b4f2b9d64ad4e970ad17cc1514",
+    "role": "Unity project settings: TimelineSettings. Retained without an engine upgrade.",
+    "textLines": 15
+  },
+  {
+    "path": "ShipbreakerVrUnity/ProjectSettings/URPProjectSettings.asset",
+    "bytes": 410,
+    "sha256": "84dda05f197984a16a2a708a624affe23b3ae94e2689f582427ff18e935436fa",
+    "role": "Unity project settings: URPProjectSettings. Retained without an engine upgrade.",
+    "textLines": 15
+  },
+  {
+    "path": "ShipbreakerVrUnity/ProjectSettings/UnityConnectSettings.asset",
+    "bytes": 901,
+    "sha256": "e9c5e12ed98a58993b8b19b8e93e4e1cf5b954f1243c588ae118ad259614db9b",
+    "role": "Unity project settings: UnityConnectSettings. Retained without an engine upgrade.",
+    "textLines": 35
+  },
+  {
+    "path": "ShipbreakerVrUnity/ProjectSettings/VFXManager.asset",
+    "bytes": 574,
+    "sha256": "31ccfaae6a939718e24c742195d8fed9ba8220b4f657e3a55a71ab7d311bc90a",
+    "role": "Unity project settings: VFXManager. Retained without an engine upgrade.",
+    "textLines": 14
+  },
+  {
+    "path": "ShipbreakerVrUnity/ProjectSettings/VersionControlSettings.asset",
+    "bytes": 188,
+    "sha256": "e7bda45bf7a394745fee1316e6c71fa676004d591ad1f3aa247fd3e4ceb86071",
+    "role": "Unity project settings: VersionControlSettings. Retained without an engine upgrade.",
+    "textLines": 8
+  },
+  {
+    "path": "ShipbreakerVrUnity/ProjectSettings/XRPackageSettings.asset",
+    "bytes": 73,
+    "sha256": "4cbc8f79d73d844f75ebe7c4d9dead01e72bd68e8ed901e926c7e58dd41d56e5",
+    "role": "Unity project settings: XRPackageSettings. Retained without an engine upgrade.",
+    "textLines": 5
+  },
+  {
+    "path": "ShipbreakerVrUnity/ProjectSettings/XRSettings.asset",
+    "bytes": 158,
+    "sha256": "edd2beb4a2e388312b4b7da241aa51070434005d82c59363f1237dd2e567585f",
+    "role": "Unity project settings: XRSettings. Retained without an engine upgrade.",
+    "textLines": 10
+  },
+  {
+    "path": "ShipbreakerVrUnity/unityProject.vrmanifest",
+    "bytes": 436,
+    "sha256": "62b2eeaf5abdcc6aeefbff9920aece9d356052bf6d98714d86e7b901ba7c027a",
+    "role": "Legacy editor VR application metadata; not the active game OpenXR bootstrap.",
+    "textLines": 16
+  }
+]

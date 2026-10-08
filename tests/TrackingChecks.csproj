@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <AutomaticallyUseReferenceAssemblyPackages>false</AutomaticallyUseReferenceAssemblyPackages>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\ShipbreakerVr\Tracking\ToolReturnVisibility.cs" Link="ToolReturnVisibility.cs" />
+    <Compile Include="..\ShipbreakerVr\NativeGamepadRouting.cs" Link="NativeGamepadRouting.cs" />
+    <Compile Include="..\ShipbreakerVr\Tracking\InputModeSelection.cs" Link="InputModeSelection.cs" />
+    <Compile Include="..\ShipbreakerVr\LegacyJoystickSafety.cs" Link="LegacyJoystickSafety.cs" />
+    <Reference Include="$(GameManagedDir)\InControl.dll" />
+    <Reference Include="0Harmony"><HintPath>..\ShipbreakerVr\ModFiles\BepInEx\core\0Harmony.dll</HintPath></Reference>
+    <Compile Include="..\ShipbreakerVr\Tracking\HudCurveCache.cs" Link="HudCurveCache.cs" />
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net48" Version="1.0.3" PrivateAssets="all" />
+    <Reference Include="$(GameManagedDir)\UnityEngine.CoreModule.dll;$(GameManagedDir)\UnityEngine.XRModule.dll;$(GameManagedDir)\UnityEngine.UI.dll;$(GameManagedDir)\Unity.TextMeshPro.dll" />
+    <Compile Include="..\ShipbreakerVr\HudMeshPatchTargets.cs" Link="HudMeshPatchTargets.cs" />
+    <Compile Include="..\ShipbreakerVr\Tracking\TrackedPose.cs" Link="TrackedPose.cs" />
+    <Compile Include="..\ShipbreakerVr\Tracking\ControllerInputs.cs" Link="ControllerInputs.cs" />
+    <Compile Include="..\ShipbreakerVr\Tracking\ToolProjection.cs" Link="ToolProjection.cs" />
+    <Compile Include="..\ShipbreakerVr\Tracking\VrToggleGesture.cs" Link="VrToggleGesture.cs" />
+    <Compile Include="..\ShipbreakerVr\Tracking\ArmGeometry.cs" Link="ArmGeometry.cs" />
+    <Compile Include="..\ShipbreakerVr\Tracking\PresentationGeometry.cs" Link="PresentationGeometry.cs" />
+    <Compile Include="..\ShipbreakerVr\Tracking\MenuInput.cs" Link="MenuInput.cs" />
+    <Compile Include="..\ShipbreakerVr\Tracking\ChordMemberDelay.cs" Link="ChordMemberDelay.cs" />
+    <Compile Include="..\ShipbreakerVr\Tracking\RoomMarkerGeometry.cs" Link="RoomMarkerGeometry.cs" />
+    <Compile Include="..\ShipbreakerVr\Tracking\HapticEnvelope.cs" Link="HapticEnvelope.cs" />
+    <Compile Include="..\ShipbreakerVr\Tracking\TriggerLatch.cs" Link="TriggerLatch.cs" />
+    <Compile Include="..\ShipbreakerVr\Tracking\InputUpdateWatchdog.cs" Link="InputUpdateWatchdog.cs" />
+    <Compile Include="..\ShipbreakerVr\Tracking\NativeAimFeature.cs" Link="NativeAimFeature.cs" />
+    <Compile Include="..\ShipbreakerVr\Tracking\TemporaryBooleanOverrides.cs" Link="TemporaryBooleanOverrides.cs" />
+    <Compile Include="..\ShipbreakerVr\ShipbreakerTrackingSpace.cs" Link="ShipbreakerTrackingSpace.cs" />
+  </ItemGroup>
+</Project>

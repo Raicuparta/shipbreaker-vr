@@ -1,5 +1,6 @@
 ﻿using HarmonyLib;
 using UnityEngine;
+using BBI.Unity.Game;
 using UnityEngine.UI;
 
 namespace ShipbreakerVr;
@@ -8,10 +9,19 @@ namespace ShipbreakerVr;
 public static class Patches
 {
     [HarmonyPostfix]
-    [HarmonyPatch(typeof(LynxCameraController), nameof(LynxCameraController.Start))]
-    private static void CreateVrCamera(LynxCameraController instance)
+    [HarmonyPatch(typeof(Hab3DController), "Awake")]
+    private static void RegisterHabitatCamera(Hab3DController __instance) => VrCamera.RegisterHabitat(__instance);
+
+    [HarmonyPrefix]
+    [HarmonyPatch(typeof(LynxCameraController), "OnGameStateChangedEvent")]
+    private static void ReleaseCameraBeforeStateChange() => VrCamera.BeforeGameCameraStateChange();
+
+    [HarmonyPostfix]
+    [HarmonyPatch(typeof(LynxCameraController), "Start")]
+    private static void CreateVrCamera(LynxCameraController __instance)
     {
-        var camera = instance.GetComponent<Camera>();
+        var camera = LynxCameraController.MainCamera;
+        if (!camera) camera = __instance.GetComponent<Camera>();
         if (!camera)
         {
             Debug.LogError("Couldn't find Main Camera in LynxCameraController");
@@ -23,12 +33,12 @@ public static class Patches
 
     [HarmonyPostfix]
     [HarmonyPatch(typeof(CanvasScaler), "OnEnable")]
-    private static void MoveCanvasesToWorldSpace(CanvasScaler instance)
+    private static void MoveCanvasesToWorldSpace(CanvasScaler __instance)
     {
-        var canvas = instance.GetComponent<Canvas>();
+        var canvas = __instance.GetComponent<Canvas>();
 
-        if (!canvas.isRootCanvas || canvas.renderMode == RenderMode.WorldSpace) return;
+        if (!canvas || !canvas.isRootCanvas || canvas.renderMode == RenderMode.WorldSpace) return;
 
-        canvas.gameObject.AddComponent<VrUi>();
+        VrUi.Attach(canvas);
     }
 }
